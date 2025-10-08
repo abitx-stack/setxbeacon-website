@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEACON - Home</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to BEACON</h1>
+        <p>Building Engagement And Connecting Our Neighbors</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="about.html">About</a> |
+        <a href="events.html">Events</a> |
+        <a href="get-involved.html">Get Involved</a> |
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Our Mission</h2>
+            <p>BEACON empowers neighbors to take civic action in Southeast Texas.</p>
+        </section>
+
+        <section>
+            <h2>Our Pillars</h2>
+            <div class="pillars">
+                <div class="pillar">
+                    <h3>Ignite</h3>
+                    <p>We spark civic engagement through outreach and education.</p>
+                </div>
+                <div class="pillar">
+                    <h3>Glow</h3>
+                    <p>We nurture ongoing community connections and support.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 BEACON</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+
