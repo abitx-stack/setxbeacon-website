@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>What We Do – SETX BEACON</title>
+<link rel="stylesheet" href="/assets/css/styles.css">
+<style>
+.container { max-width: 1000px; margin: 0 auto; padding: 0 1rem; }
+.stack { display:grid; gap:1.25rem; }
+.grid-2 { display:grid; gap:1.25rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); align-items:start; }
+.img { width:100%; height: 280px; object-fit:cover; border-radius: 14px; }
+.cta { text-align:center; margin-top: .5rem; }
+</style>
+</head>
+<body>
+<header class="site container" style="display:flex; align-items:center; justify-content:space-between; padding:1rem 0;">
+<a href="/" class="brand">SETX BEACON</a>
+<nav>
+<a href="/about.html">About</a>
+<a href="/what-we-do.html" aria-current="page">What We Do</a>
+<a href="/village.html">Be Part of the Village</a>
+<a href="/events.html">Events</a>
+<a href="/resources.html">Resources</a>
+<a href="/contact.html">Contact</a>
+</nav>
+</header>
+
+
+<main class="container stack">
+<section class="stack">
+<h1>What We Do</h1>
+<p>At BEACON, everything starts with community. <!-- Paste your opener here. --></p>
+</section>
+
+
+<section class="grid-2">
+<article class="stack">
+<h2>🗳️ Civic Engagement</h2>
+<img class="img" src="/assets/img/civic.jpg" alt="Neighbors at a voter registration table" />
+<p><!-- Final civic engagement text --></p>
+</article>
+<article class="stack">
+<h2>🤝 Community Outreach</h2>
+<img class="img" src="/assets/img/outreach.jpg" alt="Neighbors sharing a meal at a community event" />
+<p><!-- Final community outreach text --></p>
+</article>
+</section>
+
+
+<div class="cta">
+<a class="btn btn-primary" href="/village.html">Be Part of the Village</a>
+</div>
+</main>
+
+
+<footer class="site container" style="padding:1.5rem 0;">
+<small>© <span id="year"></span> SETX BEACON</small>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

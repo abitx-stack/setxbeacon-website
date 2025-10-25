@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Resources – SETX BEACON</title>
+<link rel="stylesheet" href="/assets/css/styles.css">
+<style>
+.container { max-width: 1000px; margin: 0 auto; padding: 0 1rem; }
+.stack { display:grid; gap:1.25rem; }
+.cards { display:grid; gap:1rem; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); }
+.card { border-radius: 12px; padding: 1rem; box-shadow: 0 4px 14px rgba(0,0,0,.06); }
+.logos { display:flex; gap:1rem; flex-wrap:wrap; align-items:center; }
+.logos img { height: 40px; width:auto; }
+</style>
+</head>
+<body>
+<header class="site container" style="display:flex; align-items:center; justify-content:space-between; padding:1rem 0;">
+<a href="/" class="brand">SETX BEACON</a>
+<nav>
+<a href="/about.html">About</a>
+<a href="/what-we-do.html">What We Do</a>
+<a href="/village.html">Be Part of the Village</a>
+<a href="/events.html">Events</a>
+<a href="/resources.html" aria-current="page">Resources</a>
+<a href="/contact.html">Contact</a>
+</nav>
+</header>
+
+
+<main class="container stack">
+<h1>Resources</h1>
+
+
+<section class="cards">
+<article class="card">
+<h2>Know Your Vote</h2>
+<ul>
+<li><a href="#">Voter Registration (Vote.org)</a></li>
+<li><a href="#">County Elections Office</a></li>
+<li><a href="#">Early Voting Dates</a></li>
+</ul>
+</article>
+<article class="card">
+<h2>Know Your Rights</h2>
+<ul>
+<li><a href="#">ACLU Resources</a></li>
+<li><a href="#">NAACP</a></li>
+<li><a href="#">Local Legal Aid</a></li>
+</ul>
+</article>
+<article class="card">
+<h2>Community Partners</h2>
+<div class="logos">
+<img src="/assets/img/partner1.png" alt="Partner 1">
+<img src="/assets/img/partner2.png" alt="Partner 2">
+<img src="/assets/img/partner3.png" alt="Partner 3">
+</div>
+</article>
+<article class="card">
+<h2>Local Help Directory</h2>
+<ul>
+<li><a href="#">Food Banks</a></li>
+<li><a href="#">Clinics</a></li>
+<li><a href="#">Shelters</a></li>
+</ul>
+</article>
+</section>
+</main>
+
+
+<footer class="site container" style="padding:1.5rem 0;">
+<small>© <span id="year"></span> SETX BEACON</small>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
