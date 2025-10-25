@@ -1,120 +1,147 @@
 /* --- Global Styles --- */
+:root {
+  --plum-deep: #4B0082;   /* main deep plum */
+  --plum-bright: #800080; /* accent plum */
+  --plum-light: #fff0f5;  /* pale lavender/pink background */
+  --text-dark: #2e2e2e;
+  --text-light: #fdfdfd;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #222;
-    background-color: #fefefe;
-    margin: 0;
-    padding: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: var(--plum-light);
+  color: var(--plum-deep);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
 }
 
+/* --- Links --- */
 a {
-    color: #0055aa;
-    text-decoration: none;
+  color: var(--plum-bright);
+  text-decoration: none;
 }
-
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* --- Header & Navigation --- */
-header {
-    background-color: #003366;
-    color: white;
-    padding: 30px 20px;
-    text-align: center;
+header.site {
+  background-color: var(--plum-deep);
+  color: var(--text-light);
+  padding: 20px 0;
 }
-
-header h1 {
-    margin: 0;
-    font-size: 2em;
+header.site .brand {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text-light);
 }
-
-nav {
-    margin-top: 15px;
-}
-
 nav a {
-    margin: 0 10px;
-    color: white;
-    font-weight: bold;
+  color: var(--text-light);
+  font-weight: 600;
+  margin: 0 10px;
+}
+nav a:hover {
+  color: var(--plum-light);
 }
 
-/* --- Main Sections --- */
+/* --- Main Content --- */
 main {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 20px;
 }
-
 section {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
-
-section h2 {
-    color: #003366;
-    margin-bottom: 15px;
+h1, h2, h3 {
+  color: var(--plum-deep);
+  margin-top: 0;
 }
 
 /* --- Hero Section --- */
-#hero {
-    text-align: center;
-    padding: 40px 20px;
-    background-color: #e6f0ff;
-    border-radius: 10px;
+.hero {
+  background-color: #fdfdfd;
+  text-align: center;
+  padding: 60px 20px;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+.hero h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--plum-deep);
+}
+.hero p {
+  max-width: 60ch;
+  margin: 0 auto;
+  color: var(--text-dark);
 }
 
-.cta-button {
-    display: inline-block;
-    padding: 12px 25px;
-    background-color: #0055aa;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 15px;
-    font-weight: bold;
+/* --- Buttons --- */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  margin: 5px;
+}
+.btn-primary {
+  background-color: var(--plum-bright);
+  color: var(--text-light);
+}
+.btn-primary:hover {
+  background-color: var(--plum-deep);
+}
+.btn-secondary {
+  background-color: var(--plum-light);
+  color: var(--plum-deep);
+  border: 2px solid var(--plum-deep);
+}
+.btn-secondary:hover {
+  background-color: var(--plum-deep);
+  color: var(--text-light);
+}
+.btn-outline {
+  border: 2px solid var(--plum-bright);
+  color: var(--plum-bright);
+  background-color: transparent;
+}
+.btn-outline:hover {
+  background-color: var(--plum-bright);
+  color: var(--text-light);
 }
 
-.cta-button:hover {
-    background-color: #003366;
+/* --- Cards / Peek sections --- */
+.card {
+  background-color: #ffffff;
+  border-radius: 14px;
+  padding: 1.25rem;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: transform 0.2s ease;
 }
-
-/* --- Pillars Section --- */
-#pillars .pillars {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.pillar {
-    flex: 1 1 250px;
-    background-color: #f0f8ff;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.pillar h3 {
-    color: #0055aa;
-}
-
-/* --- Upcoming Event --- */
-#upcoming {
-    background-color: #fff3e6;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+.card:hover {
+  transform: translateY(-4px);
 }
 
 /* --- Footer --- */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #eee;
-    margin-top: 40px;
-    font-size: 0.9em;
+footer.site {
+  background-color: var(--plum-deep);
+  color: var(--text-light);
+  text-align: center;
+  padding: 25px 15px;
+  margin-top: 40px;
+  font-size: 0.9em;
 }
 
+/* --- Utility --- */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.stack { display: grid; gap: 1.25rem; }
+.stack-lg { display: grid; gap: 2rem; }
+.center { text-align: center; }
