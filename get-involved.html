@@ -1,43 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BEACON - Get Involved</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <header>
-        <h1>Get Involved</h1>
-    </header>
+<!doctype html>
+<a href="/contact.html">Contact</a>
+</nav>
+</header>
 
-    <nav>
-        <a href="index.html">Home</a> |
-        <a href="about.html">About</a> |
-        <a href="events.html">Events</a> |
-        <a href="get-involved.html">Get Involved</a> |
-        <a href="contact.html">Contact</a>
-    </nav>
 
-    <main>
-        <section>
-            <h2>Volunteer</h2>
-            <p>Sign up to help with BEACON events and outreach. (Placeholder for form)</p>
-        </section>
+<main class="container stack">
+<section class="stack">
+<h1>Be Part of the Village</h1>
+<div class="toggle" aria-label="language">
+<button class="btn btn-outline" type="button" data-lang="en">English</button>
+<button class="btn btn-outline" type="button" data-lang="es">Español</button>
+</div>
+<div class="two-col">
+<div id="village-en">
+<p><!-- English invitation text --></p>
+</div>
+<div id="village-es" hidden>
+<p><!-- Spanish invitation text --></p>
+</div>
+</div>
+</section>
 
-        <section>
-            <h2>Donate</h2>
-            <p>Support our work with a donation. (Placeholder for Stripe/PayPal button)</p>
-        </section>
 
-        <section>
-            <h2>Newsletter</h2>
-            <p>Sign up to receive updates. (Placeholder for newsletter signup form)</p>
-        </section>
-    </main>
+<section class="stack">
+<h2>Neighbors in Action</h2>
+<div class="gallery">
+<img src="/assets/img/vil-1.jpg" alt="Neighbors chatting at a social hour">
+<img src="/assets/img/vil-2.jpg" alt="Volunteers at a table">
+<img src="/assets/img/vil-3.jpg" alt="Community members connecting">
+<img src="/assets/img/vil-4.jpg" alt="Group photo of smiling neighbors">
+</div>
+</section>
 
-    <footer>
-        <p>&copy; 2025 BEACON</p>
-    </footer>
+
+<section class="stack" aria-labelledby="signup">
+<h2 id="signup">Stay Connected</h2>
+<div class="two-col">
+<form action="https://example.com/newsletter" method="post" class="stack">
+<label>Email <input name="email" type="email" required></label>
+<button class="btn btn-primary" type="submit">Sign Up to Stay Connected</button>
+</form>
+<a class="btn btn-secondary" href="https://example.com/volunteer" style="align-self:start;">Volunteer Interest Form</a>
+</div>
+</section>
+</main>
+
+
+<footer class="site container" style="padding:1.5rem 0;">
+<small>© <span id="year"></span> SETX BEACON</small>
+</footer>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+const en = document.getElementById('village-en');
+const es = document.getElementById('village-es');
+document.querySelectorAll('[data-lang]').forEach(btn => {
+btn.addEventListener('click', () => {
+const lang = btn.getAttribute('data-lang');
+if (lang === 'en') { en.hidden = false; es.hidden = true; }
+else { en.hidden = true; es.hidden = false; }
+});
+});
+</script>
 </body>
 </html>

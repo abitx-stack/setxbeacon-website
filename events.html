@@ -1,30 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BEACON - Events</title>
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Events – SETX BEACON</title>
+<link rel="stylesheet" href="/assets/css/styles.css">
+<style>
+.container { max-width: 1000px; margin: 0 auto; padding: 0 1rem; }
+.stack { display:grid; gap:1.25rem; }
+.embed { width:100%; min-height: 70vh; border:0; border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,.06); }
+</style>
 </head>
 <body>
-    <header>
-        <h1>Upcoming Events</h1>
-    </header>
+<header class="site container" style="display:flex; align-items:center; justify-content:space-between; padding:1rem 0;">
+<a href="/" class="brand">SETX BEACON</a>
+<nav>
+<a href="/about.html">About</a>
+<a href="/what-we-do.html">What We Do</a>
+<a href="/village.html">Be Part of the Village</a>
+<a href="/events.html" aria-current="page">Events</a>
+<a href="/resources.html">Resources</a>
+<a href="/contact.html">Contact</a>
+</nav>
+</header>
 
-    <nav>
-        <a href="index.html">Home</a> |
-        <a href="about.html">About</a> |
-        <a href="events.html">Events</a> |
-        <a href="get-involved.html">Get Involved</a> |
-        <a href="contact.html">Contact</a>
-    </nav>
 
-    <main>
-        <p>Check back for upcoming BEACON events and volunteer opportunities. (Placeholder for events list or embedded Google Calendar)</p>
-    </main>
+<main class="container stack">
+<section class="stack">
+<h1>Events</h1>
+<p>Whether it’s a voter drive, a community coffee hour, or a neighborhood social, our events are about connection and care. Everyone’s welcome — come as you are.</p>
+</section>
 
-    <footer>
-        <p>&copy; 2025 BEACON</p>
-    </footer>
+
+<section>
+<!-- Replace src with your Mobilize embed URL -->
+<iframe class="embed" src="https://www.mobilize.us/embed/event/setxbeacon/" title="Mobilize Events"></iframe>
+</section>
+</main>
+
+
+<footer class="site container" style="padding:1.5rem 0;">
+<small>© <span id="year"></span> SETX BEACON</small>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
