@@ -1,78 +1,67 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>About – SETX BEACON</title>
-<link rel="stylesheet" href="css/style.css" />
-<style>
-.container { max-width: 900px; margin: 0 auto; padding: 0 1rem; }
-.stack { display: grid; gap: 1.25rem; }
-.stack-lg { display: grid; gap: 2rem; }
-.values { display:grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); }
-.value { border-radius: 12px; padding: 1rem; box-shadow: 0 4px 14px rgba(0,0,0,.06); }
-.team { display:grid; gap:1rem; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); }
-.avatar { width:100%; aspect-ratio:1/1; object-fit:cover; border-radius: 14px; }
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About – SETX BEACON</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-<header class="site container" style="display:flex; align-items:center; justify-content:space-between; padding:1rem 0;">
-<a href="/" class="brand">SETX BEACON</a>
-<nav>
-<a href="/about.html" aria-current="page">About</a>
-<a href="/what-we-do.html">What We Do</a>
-<a href="/village.html">Be Part of the Village</a>
-<a href="/events.html">Events</a>
-<a href="/resources.html">Resources</a>
-<a href="/contact.html">Contact</a>
-</nav>
-</header>
+  <a class="visually-hidden" href="#main">Skip to content</a>
 
+  <header class="site">
+    <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:1rem;">
+      <a href="index.html" class="brand" style="font-weight:800; letter-spacing:.3px;">SETX BEACON</a>
+      <nav aria-label="Primary">
+        <a href="about.html" aria-current="page">About</a>
+        <a href="what-we-do.html">What We Do</a>
+        <a href="village.html">Be Part of the Village</a>
+        <a href="events.html">Events</a>
+        <a href="resources.html">Resources</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-<main class="container stack-lg">
-<section class="stack">
-<h1>Our Story</h1>
-<div class="grid" style="grid-template-columns: 1fr; align-items:start; gap:1.5rem;">
-<img src="/assets/img/about.jpg" alt="Abi and Baylee at a voter registration table" style="width:100%; max-height:420px; object-fit:cover; border-radius:16px;"/>
-<div>
-<p><!-- Paste your finalized Our Story text here. --></p>
-</div>
-</div>
-</section>
+  <main id="main" class="container stack-lg">
+    <section class="panel stack">
+      <h1 class="page-title">Our Story</h1>
+      <img src="images/about.jpg" alt="Abi and Baylee at a voter registration table" style="width:100%; max-height:420px; object-fit:cover; border-radius:12px;" />
+      <p><!-- Paste your finalized Our Story text here. --></p>
+    </section>
 
+    <section class="panel stack">
+      <h2>Our Values</h2>
+      <div class="grid-2">
+        <article class="card"><h3>💛 Care</h3><p><!-- value text --></p></article>
+        <article class="card"><h3>🕊 Respect</h3><p><!-- value text --></p></article>
+        <article class="card"><h3>🤝 Inclusion</h3><p><!-- value text --></p></article>
+      </div>
+    </section>
 
-<section class="stack">
-<h2>Our Values</h2>
-<div class="values">
-<div class="value"><h3>💛 Care</h3><p><!-- value text --></p></div>
-<div class="value"><h3>🕊 Respect</h3><p><!-- value text --></p></div>
-<div class="value"><h3>🤝 Inclusion</h3><p><!-- value text --></p></div>
-<!-- Add more if needed -->
-</div>
-</section>
+    <section class="panel stack">
+      <h2>Meet the Founders</h2>
+      <div class="grid-2">
+        <article class="card" style="text-align:left;">
+          <img src="images/abi.jpg" alt="Abi smiling" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:12px;" />
+          <h3>Abi</h3>
+          <p><!-- short bio --></p>
+        </article>
+        <article class="card" style="text-align:left;">
+          <img src="images/baylee.jpg" alt="Baylee smiling" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:12px;" />
+          <h3>Baylee</h3>
+          <p><!-- short bio --></p>
+        </article>
+      </div>
+    </section>
+  </main>
 
-
-<section class="stack">
-<h2>Meet the Founders</h2>
-<div class="team">
-<article>
-<img class="avatar" src="/assets/img/abi.jpg" alt="Abi smiling" />
-<h3>Abi</h3>
-<p><!-- short bio --></p>
-</article>
-<article>
-<img class="avatar" src="/assets/img/baylee.jpg" alt="Baylee smiling" />
-<h3>Baylee</h3>
-<p><!-- short bio --></p>
-</article>
-</div>
-</section>
-</main>
-
-
-<footer class="site container" style="padding:1.5rem 0;">
-<small>© <span id="year"></span> SETX BEACON</small>
-</footer>
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <footer class="site">
+    <div class="container" style="display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap;">
+      <small>© <span id="year"></span> SETX BEACON</small>
+      <a href="contact.html">Accessibility & Contact</a>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

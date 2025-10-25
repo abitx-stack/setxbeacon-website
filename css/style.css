@@ -145,3 +145,25 @@ footer.site {
 .stack { display: grid; gap: 1.25rem; }
 .stack-lg { display: grid; gap: 2rem; }
 .center { text-align: center; }
+/* --- Reusable page panel to match home hero card --- */
+.panel {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.08);
+  padding: 32px 20px;
+}
+
+/* Consistent page headings spacing */
+.page-title {
+  margin: 0 0 12px 0;
+}
+
+/* Even grid for two-column sections */
+.grid-2 {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* Space below the nav so content never touches it */
+main.container { padding-top: 28px; }
