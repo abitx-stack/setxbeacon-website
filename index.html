@@ -1,674 +1,761 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SETX BEACON - Be the light. Build the change.</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      line-height: 1.6;
-      color: #0f172a;
-      background: #ffffff;
-    }
-    html, body {
-      overflow-x: hidden;
-    }
-    .hidden {
-      display: none !important;
-    }
-    
-    header {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-    }
-    
-    .header-content {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 1.5rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 900;
-      color: #4a1d5f;
-      text-decoration: none;
-    }
-    
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-    }
-    
-    nav {
-      display: flex;
-      gap: 2rem;
-    }
-    
-    nav a {
-      color: #1e293b;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: color 0.3s;
-    }
-    
-    nav a:hover {
-      color: #4a1d5f;
-    }
-    
-    .lang-toggle {
-      display: flex;
-      gap: 0.5rem;
-    }
-    
-    .lang-btn {
-      background: none;
-      border: 2px solid #4a1d5f;
-      color: #4a1d5f;
-      padding: 0.4rem 0.9rem;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 0.85rem;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-    
-    .lang-btn:hover,
-    .lang-btn.active {
-      background: #4a1d5f;
-      color: white;
-    }
-    
-    .construction-banner {
-      background: linear-gradient(135deg, #f5c068 0%, #ffd480 100%);
-      color: #1a1a1a;
-      padding: 0.9rem 2rem;
-      text-align: center;
-      font-weight: 600;
-      font-size: 0.95rem;
-      border-bottom: 2px solid #d4a049;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    
-    .construction-banner p {
-      margin: 0;
-    }
-    
-    .hero {
-      background: linear-gradient(135deg, #2d0f3d 0%, #4a1d5f 50%, #6b2d8f 100%);
-      color: white;
-      padding: 3rem 2rem;
-      text-align: center;
-    }
-    
-    .hero-content {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    
-    .hero h1 {
-      font-size: 3.25rem;
-      font-weight: 900;
-      margin-bottom: 1rem;
-    }
-    
-    .hero .tagline {
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      color: #f5c068;
-    }
-    
-    .hero .subtitle {
-      font-size: 1.15rem;
-      line-height: 1.6;
-      color: rgba(255,255,255,0.9);
-      max-width: 800px;
-      margin: 0 auto 2rem;
-    }
-    
-    .cta-buttons {
-      display: flex;
-      gap: 1.25rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    
-    .btn {
-      padding: 1.1rem 2.5rem;
-      border-radius: 8px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: all 0.3s;
-      display: inline-block;
-    }
-    
-    .btn-primary {
-      background: #f5c068;
-      color: #1a1a1a;
-    }
-    
-    .btn-primary:hover {
-      background: #ffd480;
-      transform: translateY(-3px);
-    }
-    
-    .btn-secondary {
-      background: transparent;
-      color: white;
-      border: 2px solid white;
-    }
-    
-    .btn-secondary:hover {
-      background: white;
-      color: #4a1d5f;
-    }
-    
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-    
-    section {
-      padding: 3rem 0;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SETX Beacon | Bringing Southeast Texas Together</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --purple: #780982;
+  --purple-light: #9f2bb0; /* lighter, more vibrant */
+  --orange: #f57f1d;
+  --orange-light: #ff9f4a; /* brighter, less muddy */
 
-    section + section {
-      border-top: 1px solid #e5e7eb;
-    }
-    
-    #mission {
-      padding-bottom: 2rem;
-    }
-    
-    #programs {
-      padding-top: 2rem;
-    }
-    
-    .section-header {
-      margin-bottom: 1.5rem;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    
-    .section-header h2 {
-      font-size: 2rem;
-      font-weight: 900;
-      color: #4a1d5f;
-      margin-bottom: 0.5rem;
-    }
-    
-    #mission {
-      background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
-    }
-    
-    .mission-content {
-      background: white;
-      border-left: 6px solid #4a1d5f;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    
-    .mission-content p {
-      font-size: 1.1rem;
-      line-height: 1.85;
-      color: #334155;
-      margin-bottom: 1.25rem;
-    }
-    
-    .mission-content strong {
-      color: #4a1d5f;
-    }
-    
-    #programs {
-      background: #f8f9fa;
-    }
-    
-    .programs-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-      gap: 2rem;
-    }
-    
-    .program-card {
-      background: white;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-      transition: all 0.4s;
-    }
-    
-    .program-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 16px 50px rgba(74, 29, 95, 0.12);
-    }
-    
-    .program-header {
-      background: linear-gradient(135deg, #2d0f3d 0%, #4a1d5f 100%);
-      color: white;
-      padding: 2rem;
-      position: relative;
-    }
-    
-    .program-header::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: #f5c068;
-    }
-    
-    .program-header h3 {
-      font-size: 1.75rem;
-      font-weight: 800;
-    }
-    
-    .program-body {
-      padding: 2rem;
-    }
-    
-    .program-body p {
-      color: #475569;
-      font-size: 1.05rem;
-      line-height: 1.7;
-      margin-bottom: 1.25rem;
-    }
-    
-    .program-body ul {
-      list-style: none;
-      padding: 0;
-    }
-    
-    .program-body li {
-      padding: 0.85rem 0;
-      padding-left: 2rem;
-      position: relative;
-      color: #334155;
-      font-size: 1rem;
-      border-bottom: 1px solid #f1f5f9;
-    }
-    
-    .program-body li:last-child {
-      border-bottom: none;
-    }
-    
-    .program-body li::before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      color: #4a1d5f;
-      font-weight: bold;
-    }
-    
-    #contact {
-      background: linear-gradient(135deg, #2d0f3d 0%, #4a1d5f 50%, #6b2d8f 100%);
-      color: white;
-    }
-    
-    .contact-content {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    
-    .contact-content h2 {
-      color: white;
-      margin-bottom: 1rem;
-      font-size: 2.5rem;
-      font-weight: 900;
-    }
-    
-    .contact-content p {
-      font-size: 1.2rem;
-      margin-bottom: 1.5rem;
-      color: rgba(255,255,255,0.95);
-    }
-    
-    .contact-email {
-      display: inline-block;
-      background: white;
-      color: #4a1d5f;
-      padding: 1.1rem 2.5rem;
-      border-radius: 8px;
-      font-size: 1.2rem;
-      font-weight: 700;
-      text-decoration: none;
-      margin: 0.5rem 0 2rem 0;
-      transition: all 0.3s;
-    }
-    
-    .contact-email:hover {
-      background: #f5c068;
-      color: #1a1a1a;
-      transform: translateY(-3px);
-    }
-    
-    .accessibility-note {
-      background: rgba(255,255,255,0.1);
-      backdrop-filter: blur(10px);
-      padding: 1.25rem;
-      border-radius: 10px;
-      margin-top: 1.5rem;
-      border: 1px solid rgba(255,255,255,0.15);
-    }
-    
-    .accessibility-note p {
-      font-size: 0.95rem;
-      margin-bottom: 0;
-    }
-    
-    footer {
-      background: #0f172a;
-      color: #94a3b8;
-      padding: 2.5rem 2rem;
-      text-align: center;
-    }
-    
-    footer p {
-      margin-bottom: 0.95rem;
-    }
-    
-    .footer-divider {
-      width: 100px;
-      height: 3px;
-      background: linear-gradient(90deg, transparent 0%, #4a1d5f 50%, transparent 100%);
-      margin: 1.5rem auto;
-    }
-    
-    .footer-links {
-      margin-top: 2rem;
-      padding-top: 2rem;
-      border-top: 1px solid #1e293b;
-    }
-    
-    .footer-links a {
-      color: #94a3b8;
-      text-decoration: none;
-      margin: 0 1.5rem;
-      transition: color 0.3s;
-    }
-    
-    .footer-links a:hover {
-      color: #f5c068;
-    }
-    
-  @media (max-width: 768px) {
-    .hero h1 {
-      font-size: 2.5rem;
-    }
+  /* LIGHTENED BACKGROUNDS */
+  --bg: #1a1220;   /* was #0D0910 */
+  --bg2: #22162a;  /* was #130D18 */
+  --card: #2a1b33; /* was #1A1020 */
 
-    /* HEADER FIXES */
-    .header-content {
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-      padding: 1rem 1.25rem;
-    }
+  /* TEXT */
+  --text: #fff7ff;     /* slightly brighter */
+  --muted: #cbb6d9;   /* lighter muted text */
 
-    .logo {
-      font-size: 1.4rem;
-      text-align: center;
-    }
-
-    .header-right {
-      flex-direction: column;
-      gap: 0.75rem;
-      width: 100%;
-    }
-
-    nav {
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.25rem;
-    }
-
-    .lang-toggle {
-      justify-content: center;
-    }
-
-    .programs-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .container {
-      padding: 0 1.25rem;
-    }
+  /* BORDERS / GLOWS (less heavy) */
+  --border: rgba(120,9,130,0.18);
+  --glow-purple: rgba(120,9,130,0.30);
+  --glow-orange: rgba(245,127,29,0.28);
 }
-  </style>
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+/* ========= HEADER ========= */
+header {
+  position: sticky; top: 0; z-index: 1000;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 48px;
+  background: rgba(13,9,16,0.88);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo-area { display: flex; align-items: center; gap: 10px; text-decoration: none; cursor: pointer; }
+.logo-area img { height: 48px; width: auto; }
+
+nav { display: flex; align-items: center; gap: 4px; }
+nav button {
+  background: none; border: none; color: var(--muted);
+  font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500;
+  padding: 8px 14px; border-radius: 8px; cursor: pointer; transition: all 0.2s;
+}
+nav button:hover, nav button.active { color: var(--text); background: rgba(123,45,139,0.2); }
+.nav-cta { background: linear-gradient(135deg, var(--purple), var(--orange)) !important; color: white !important; padding: 9px 20px !important; border-radius: 999px !important; }
+.nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
+
+/* ========= PAGES ========= */
+.page { display: none; animation: fadeIn 0.4s ease; }
+.page.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ========= HERO ========= */
+.hero {
+  position: relative; min-height: 92vh;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  text-align: center; padding: 80px 24px; overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 15% 30%, var(--glow-purple), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 85% 20%, var(--glow-orange), transparent 55%),
+    radial-gradient(ellipse 50% 40% at 50% 90%, rgba(123,45,139,0.2), transparent 50%);
+}
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(123,45,139,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(123,45,139,0.08) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black, transparent);
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(123,45,139,0.2); border: 1px solid rgba(123,45,139,0.4);
+  border-radius: 999px; padding: 6px 18px; font-size: 12px; font-weight: 600;
+  color: var(--orange-light); letter-spacing: 2px; text-transform: uppercase;
+  margin-bottom: 28px; position: relative;
+}
+.hero h1 {
+  font-size: clamp(42px, 7vw, 80px); line-height: 1.05;
+  letter-spacing: -1.5px; max-width: 900px; position: relative; margin-bottom: 24px;
+}
+.hero h1 .grad {
+  background: linear-gradient(135deg, var(--purple-light) 0%, var(--orange) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.hero-sub { font-size: 18px; color: var(--muted); max-width: 580px; line-height: 1.7; position: relative; margin-bottom: 40px; }
+.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; position: relative; }
+.hero-logo { position: relative; margin-bottom: 32px; }
+.hero-logo img { height: 100px; width: auto; }
+
+.hero-stats { display: flex; gap: 48px; margin-top: 64px; position: relative; flex-wrap: wrap; justify-content: center; }
+.hero-stat { text-align: center; }
+.hero-stat-num {
+  font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 700;
+  background: linear-gradient(135deg, var(--purple-light), var(--orange));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.hero-stat-label { font-size: 13px; color: var(--muted); letter-spacing: 0.5px; margin-top: 4px; }
+
+/* ========= SHARED ========= */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 28px; border-radius: 999px;
+  font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 600;
+  cursor: pointer; border: none; transition: all 0.25s; text-decoration: none;
+}
+.btn-primary { background: linear-gradient(135deg, var(--purple), var(--orange)); color: white; box-shadow: 0 8px 32px rgba(123,45,139,0.4); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(123,45,139,0.5); }
+.btn-ghost { background: rgba(255,255,255,0.06); color: var(--text); border: 1px solid rgba(255,255,255,0.12); }
+.btn-ghost:hover { background: rgba(255,255,255,0.1); }
+
+.section { max-width: 1160px; margin: 0 auto; padding: 100px 24px; }
+.section-label { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--orange); margin-bottom: 16px; }
+.section-title { font-size: clamp(30px, 4vw, 48px); line-height: 1.1; letter-spacing: -0.5px; margin-bottom: 20px; }
+.section-sub { font-size: 17px; color: var(--muted); line-height: 1.7; max-width: 600px; }
+
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 48px; }
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 20px; margin-top: 48px; }
+
+.card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 32px;
+  transition: all 0.3s; position: relative; overflow: hidden;
+}
+.card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--purple), var(--orange)); opacity: 0; transition: opacity 0.3s;
+}
+.card:hover { transform: translateY(-6px); border-color: rgba(120,9,130,0.35); }
+.card:hover::before { opacity: 1; }
+.card-icon { width: 52px; height: 52px; border-radius: 14px; background: linear-gradient(135deg, rgba(123,45,139,0.3), rgba(244,121,32,0.3)); display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 20px; }
+.card h3 { font-family: 'Playfair Display', serif; font-size: 20px; margin-bottom: 12px; }
+.card p { color: var(--muted); line-height: 1.7; font-size: 15px; }
+
+.highlight-band {
+  background: linear-gradient(135deg, var(--purple) 0%, #5a1a6b 40%, #3d0a4a 100%);
+  border-radius: 28px; padding: 80px 60px; margin: 0 24px;
+  position: relative; overflow: hidden; text-align: center;
+}
+.highlight-band::before {
+  content: ''; position: absolute; top: -60px; right: -60px; width: 300px; height: 300px;
+  border-radius: 50%; background: radial-gradient(circle, rgba(244,121,32,0.4), transparent 70%);
+}
+.highlight-band h2 { font-size: clamp(28px, 4vw, 44px); margin-bottom: 16px; }
+.highlight-band p { font-size: 18px; color: rgba(255,255,255,0.75); max-width: 580px; margin: 0 auto 32px; line-height: 1.7; }
+
+.divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 0 48px; }
+
+.mission-split { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.mission-visual {
+  background: var(--card); border: 1px solid var(--border); border-radius: 24px;
+  padding: 48px 32px; text-align: center; position: relative; overflow: hidden;
+}
+.mission-visual::after {
+  content: ''; position: absolute; bottom: -40px; left: -40px; width: 200px; height: 200px;
+  border-radius: 50%; background: radial-gradient(circle, var(--glow-purple), transparent 70%);
+}
+
+.budget-bar { margin-bottom: 20px; }
+.budget-label { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 14px; }
+.budget-label span:first-child { color: var(--text); font-weight: 500; }
+.budget-label span:last-child { color: var(--orange); font-weight: 600; }
+.bar-track { height: 10px; background: rgba(255,255,255,0.07); border-radius: 999px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--purple), var(--orange)); }
+
+.info-table { width: 100%; border-collapse: collapse; margin-top: 32px; }
+.info-table td { padding: 16px 0; border-bottom: 1px solid var(--border); font-size: 15px; vertical-align: top; }
+.info-table td:first-child { color: var(--muted); width: 42%; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; padding-right: 16px; }
+.info-table td:last-child { color: var(--text); font-weight: 500; }
+
+.contact-form { display: flex; flex-direction: column; gap: 16px; max-width: 560px; }
+.form-group { display: flex; flex-direction: column; gap: 8px; }
+.form-group label { font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+.form-input {
+  background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+  padding: 14px 18px; color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 15px; outline: none; transition: border-color 0.2s;
+}
+.form-input:focus { border-color: var(--purple-light); }
+textarea.form-input { resize: vertical; min-height: 140px; }
+
+footer {
+  padding: 60px 48px 40px; border-top: 1px solid var(--border);
+  display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px;
+}
+.footer-brand p { color: var(--muted); font-size: 14px; line-height: 1.7; margin-top: 16px; max-width: 320px; }
+.footer-col h4 { font-family: 'Playfair Display', serif; font-size: 16px; margin-bottom: 16px; }
+.footer-col a { display: block; color: var(--muted); font-size: 14px; margin-bottom: 10px; text-decoration: none; cursor: pointer; transition: color 0.2s; }
+.footer-col a:hover { color: var(--orange); }
+.footer-bottom {
+  border-top: 1px solid var(--border); padding: 20px 48px;
+  display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--muted);
+}
+
+.pill { display: inline-block; background: rgba(123,45,139,0.2); border: 1px solid rgba(123,45,139,0.4); border-radius: 999px; padding: 4px 14px; font-size: 12px; color: var(--purple-light); font-weight: 600; letter-spacing: 0.5px; }
+.pill-orange { background: rgba(244,121,32,0.15); border-color: rgba(244,121,32,0.4); color: var(--orange-light); }
+
+.page-hero { padding: 80px 24px 60px; text-align: center; position: relative; overflow: hidden; }
+.page-hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 50% 0%, rgba(123,45,139,0.3), transparent 70%); }
+
+.impact-metric-card { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 36px; text-align: center; }
+.impact-num {
+  font-family: 'Playfair Display', serif; font-size: 56px; font-weight: 700;
+  background: linear-gradient(135deg, var(--purple-light), var(--orange));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  display: block; line-height: 1; margin-bottom: 12px;
+}
+.impact-metric-card p { color: var(--muted); font-size: 15px; }
+
+.quote-block {
+  border-left: 3px solid var(--orange); padding: 20px 28px;
+  background: rgba(244,121,32,0.07); border-radius: 0 12px 12px 0; margin: 32px 0;
+}
+.quote-block p { font-family: 'Playfair Display', serif; font-size: 20px; font-style: italic; line-height: 1.6; }
+.quote-block span { display: block; color: var(--muted); font-size: 13px; margin-top: 12px; }
+
+.alert-box {
+  background: rgba(244,121,32,0.1); border: 1px solid rgba(244,121,32,0.3);
+  border-radius: 14px; padding: 20px 24px; display: flex; gap: 14px; align-items: flex-start;
+}
+.alert-box .alert-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+.alert-box p { font-size: 14px; color: var(--muted); line-height: 1.65; }
+.alert-box strong { color: var(--text); }
+
+/* Green verified badge */
+.verified-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(34,197,94,0.15); border: 1px solid rgba(34,197,94,0.4);
+  border-radius: 999px; padding: 4px 14px; font-size: 12px; color: #4ade80; font-weight: 600;
+}
+
+.timeline { position: relative; padding-left: 32px; }
+.timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--purple), var(--orange)); }
+.timeline-item { position: relative; margin-bottom: 40px; }
+.timeline-item::before { content: ''; position: absolute; left: -38px; top: 4px; width: 14px; height: 14px; border-radius: 50%; background: var(--orange); border: 3px solid var(--bg); }
+.timeline-year { font-size: 12px; color: var(--orange); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
+.timeline-item h4 { font-family: 'Playfair Display', serif; font-size: 18px; margin-bottom: 8px; }
+.timeline-item p { color: var(--muted); font-size: 14px; line-height: 1.65; }
+
+.program-card { background: var(--card); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; transition: all 0.3s; }
+.program-card:hover { transform: translateY(-6px); border-color: rgba(123,45,139,0.5); }
+.program-header { padding: 36px 32px 24px; background: linear-gradient(135deg, rgba(123,45,139,0.3), rgba(244,121,32,0.15)); }
+.program-body { padding: 24px 32px 32px; }
+.program-body p { color: var(--muted); font-size: 15px; line-height: 1.7; margin-bottom: 20px; }
+.program-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* IRS letter styling */
+.irs-box {
+  background: var(--card); border: 1px solid rgba(34,197,94,0.3);
+  border-radius: 20px; padding: 36px; position: relative; overflow: hidden;
+}
+.irs-box::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, #22c55e, var(--orange));
+}
+
+@media (max-width: 768px) {
+  header { padding: 12px 20px; }
+  nav button { padding: 6px 8px; font-size: 12px; }
+  .mission-split { grid-template-columns: 1fr; gap: 40px; }
+  footer { grid-template-columns: 1fr; gap: 32px; padding: 40px 24px; }
+  .footer-bottom { padding: 20px 24px; flex-direction: column; gap: 8px; text-align: center; }
+  .highlight-band { padding: 48px 28px; margin: 0 12px; }
+}
+</style>
 </head>
 <body>
-  <div class="construction-banner">
-    <p id="banner-en">🚧  We’re building this site as we grow. New programs and updates coming soon. 🚧</p>
-    <p class="hidden" id="banner-es">🚧 Estamos construyendo este sitio mientras crecemos. Pronto habrá nuevos programas y actualizaciones. 🚧</p>
+
+<!-- ======= HEADER ======= -->
+<header>
+  <div class="logo-area" onclick="showPage('home')">
+    <img src="https://i.imgur.com/iGhWAn0.png" alt="SETX Beacon Icon" onerror="this.style.display='none'">
+    <img src="https://i.imgur.com/543HTXC.png" alt="SETX Beacon" style="height:40px;width:auto" onerror="this.style.display='none'">
   </div>
-  
-  <header>
-    <div class="header-content">
-      <a href="#" class="logo">SETX BEACON</a>
-      <div class="header-right">
-        <nav>
-          <a href="#mission">Mission</a>
-          <a href="#programs">Programs</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <div class="lang-toggle">
-          <button class="lang-btn active" onclick="switchLang('en')">EN</button>
-          <button class="lang-btn" onclick="switchLang('es')">ES</button>
-        </div>
-      </div>
-    </div>
-  </header>
+  <nav>
+    <button onclick="showPage('home')" class="active" id="nav-home">Home</button>
+    <button onclick="showPage('about')" id="nav-about">About</button>
+    <button onclick="showPage('programs')" id="nav-programs">Programs</button>
+    <button onclick="showPage('impact')" id="nav-impact">Impact</button>
+    <button onclick="showPage('transparency')" id="nav-transparency">Transparency</button>
+    <button onclick="showPage('contact')" id="nav-contact" class="nav-cta">Get Involved</button>
+  </nav>
+</header>
 
+<!-- =================== HOME =================== -->
+<div id="page-home" class="page active">
   <section class="hero">
-    <div class="hero-content">
-      <h1>SETX BEACON</h1>
-      <p class="tagline" id="tagline-en">Be the light. Build the change.</p>
-      <p class="tagline hidden" id="tagline-es">Sé la luz. Construye el cambio.</p>
-      <p class="subtitle" id="subtitle-en">We bring neighbors together to learn, connect, and take part in shaping Southeast Texas.</p>
-      <p class="subtitle hidden" id="subtitle-es">Reunimos a nuestras comunidades para aprender, conectarse y participar en el futuro del sureste de Texas.</p>
-      <div class="cta-buttons">
-        <a href="#contact" class="btn btn-primary" id="cta1-en">Get Involved</a>
-        <a href="#contact" class="btn btn-primary hidden" id="cta1-es">Participa</a>
-        <a href="#mission" class="btn btn-secondary" id="cta2-en">Learn More</a>
-        <a href="#mission" class="btn btn-secondary hidden" id="cta2-es">Conoce Más</a>
-      </div>
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-logo">
+      <img src="https://i.imgur.com/543HTXC.png" alt="SETX Beacon" style="height:120px;width:auto;filter:drop-shadow(0 0 40px rgba(123,45,139,0.5))">
+    </div>
+    <div class="hero-eyebrow">✦ IRS-Recognized 501(c)(3) · Southeast Texas</div>
+    <h1>A new <span class="grad">light</span> for<br>Southeast Texas</h1>
+    <p class="hero-sub">SETX Beacon brings neighbors together through local events, shared service, and genuine community connection — creating spaces where everyone belongs.</p>
+    <div class="hero-btns">
+      <button class="btn btn-primary" onclick="showPage('contact')">Get Involved →</button>
+      <button class="btn btn-ghost" onclick="showPage('about')">Our Story</button>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-num">500+</div><div class="hero-stat-label">People Reached</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">25+</div><div class="hero-stat-label">Events Hosted</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">10+</div><div class="hero-stat-label">Local Partners</div></div>
     </div>
   </section>
 
-  <section id="mission">
-    <div class="container">
-      <div class="section-header">
-        <h2 id="mission-title-en">Our Mission</h2>
-        <h2 class="hidden" id="mission-title-es">Nuestra Misión</h2>
+  <div class="divider"></div>
+
+  <section class="section reveal">
+    <span class="section-label">What We Do</span>
+    <h2 class="section-title">Not just programs.<br>Real community.</h2>
+    <p class="section-sub">We build the kind of connections that make a region resilient — low-barrier, welcoming spaces where meaningful relationships happen.</p>
+    <div class="grid-3">
+      <div class="card"><div class="card-icon">🌐</div><h3>Community Events</h3><p>From neighborhood gatherings to city-wide initiatives, every event is designed to foster real connection — not just attendance.</p></div>
+      <div class="card"><div class="card-icon">🤝</div><h3>Service Opportunities</h3><p>Shared service projects that bring diverse groups together around causes that matter to Southeast Texas.</p></div>
+      <div class="card"><div class="card-icon">🔗</div><h3>Local Partnerships</h3><p>We collaborate with organizations already doing the work — amplifying impact rather than duplicating effort.</p></div>
+    </div>
+  </section>
+
+  <div class="highlight-band reveal">
+    <h2>This region deserves better connection.</h2>
+    <p>Southeast Texas is full of people who want to be part of something. SETX Beacon is building the infrastructure for that something to exist.</p>
+    <button class="btn btn-primary" onclick="showPage('programs')">See Our Programs</button>
+  </div>
+
+  <section class="section reveal">
+    <span class="section-label">Our Mission</span>
+    <div class="mission-split">
+      <div>
+        <h2 class="section-title">Built for Southeast Texas. By Southeast Texas.</h2>
+        <p style="color:var(--muted);line-height:1.8;font-size:16px;margin-bottom:20px">SETX Beacon exists to bring neighbors together and build meaningful connections across Southeast Texas through local events and shared service opportunities. We create welcoming, low-barrier spaces where people can gather, build relationships, and experience a true sense of belonging.</p>
+        <p style="color:var(--muted);line-height:1.8;font-size:16px;margin-bottom:28px">By strengthening community ties and supporting connection across diverse groups, we help foster a more engaged, resilient, and connected region.</p>
+        <div class="verified-badge">✓ IRS-Recognized 501(c)(3) Public Charity — EIN: 41-3255647</div>
       </div>
-      <div class="mission-content">
-        <div id="mission-en">
-          <p>
-          SETX BEACON exists to help rebuild the sense of community that makes people feel connected, confident, and involved.
-          </p>
+      <div class="mission-visual">
+        <img src="https://i.imgur.com/iGhWAn0.png" alt="SETX Beacon" style="width:140px;height:auto;margin-bottom:20px;position:relative;z-index:1;filter:drop-shadow(0 8px 24px rgba(123,45,139,0.5))">
+        <h3 style="font-family:'Playfair Display',serif;font-size:22px;margin-bottom:8px;position:relative;z-index:1">A Beacon for All</h3>
+        <p style="color:var(--muted);font-size:14px;line-height:1.65;position:relative;z-index:1">Guiding Southeast Texas communities toward connection, belonging, and resilience.</p>
+      </div>
+    </div>
+  </section>
+</div>
 
-          <p>
-          We focus on neighbors who have often been left out of civic life. Not because they don’t care, but because the systems around them can be confusing, inaccessible, or unwelcoming.
-          </p>
+<!-- =================== ABOUT =================== -->
+<div id="page-about" class="page">
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <span class="section-label" style="position:relative">Our Story</span>
+    <h1 class="section-title" style="max-width:700px;margin:0 auto 16px;position:relative">About SETX Beacon</h1>
+    <p class="section-sub" style="margin:0 auto;position:relative">A nonprofit built from a simple belief: Southeast Texas deserves a community people genuinely want to be part of.</p>
+  </section>
 
-          <p>
-          Our work is about making participation easier and more human. That might look like registering to vote, learning how local government works, showing up for a community cleanup, or just meeting new people at a social.
-          </p>
+  <section class="section">
+    <div class="grid-2">
+      <div>
+        <span class="section-label">Who We Are</span>
+        <h2 class="section-title">Organization Overview</h2>
+        <p style="color:var(--muted);line-height:1.8;font-size:16px;margin-bottom:20px">SETX Beacon is a federally recognized 501(c)(3) nonprofit organization headquartered in Beaumont, Texas. We exist to bridge divides, foster meaningful dialogue, and build the connective tissue that makes a community whole.</p>
+        <p style="color:var(--muted);line-height:1.8;font-size:16px;margin-bottom:24px">Our work focuses on creating low-barrier, welcoming spaces — events, gatherings, and service opportunities — where people from all walks of life can meet, form relationships, and become part of something bigger than themselves.</p>
 
-          <p>
-          By working alongside local organizations and community leaders, we help bridge gaps, share resources, and build a Southeast Texas where everyone belongs.
-          </p>
-
+        <table class="info-table">
+          <tr><td>Organization Legal Name</td><td>SETX Beacon</td></tr>
+          <tr><td>Organization Type</td><td>Public Charity — IRC Section 501(c)(3)</td></tr>
+          <tr><td>Employer ID Number (EIN)</td><td>41-3255647</td></tr>
+          <tr><td>Public Charity Status</td><td>170(b)(1)(A)(vi)</td></tr>
+          <tr><td>Effective Date of Exemption</td><td>December 24, 2025</td></tr>
+          <tr><td>Contribution Deductibility</td><td>Yes — donations are tax-deductible</td></tr>
+          <tr><td>Founded</td><td>2025</td></tr>
+          <tr><td>Physical Address</td><td>1045 Church St, Beaumont, TX 77705</td></tr>
+          <tr><td>Email Address</td><td>info@setxbeacon.org</td></tr>
+          <tr><td>Official Website</td><td>setxbeacon.org</td></tr>
+          <tr><td>Region Served</td><td>Southeast Texas</td></tr>
+        </table>
+      </div>
+      <div>
+        <span class="section-label">Our Mission</span>
+        <div class="quote-block">
+          <p>"SETX Beacon exists to bring neighbors together and build meaningful connections across Southeast Texas through local events and shared service opportunities."</p>
+          <span>— SETX Beacon Mission Statement</span>
         </div>
-        <div class="hidden" id="mission-es">
-          <p>
-          SETX BEACON existe para ayudar a reconstruir el sentido de comunidad que hace que las personas se sientan conectadas, seguras y parte de algo.
-          </p>
+        <div class="card" style="margin-top:24px">
+          <h3>Our Vision</h3>
+          <p style="margin-top:12px">A Southeast Texas where every person feels known, valued, and connected to their neighbors — where community isn't just a word, but a daily lived experience.</p>
+        </div>
+        <div class="card" style="margin-top:16px">
+          <h3>Our Values</h3>
+          <p style="margin-top:12px">Belonging without barriers. Authentic connection. Local impact. Inclusive service. Transparent operation.</p>
+        </div>
+        <div class="irs-box" style="margin-top:20px">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+            <span style="font-size:20px">📋</span>
+            <span class="verified-badge">✓ 501(c)(3) Confirmed</span>
+          </div>
+          <p style="color:var(--muted);font-size:13px;line-height:1.65">IRS Determination Letter issued February 24, 2026. Signed by Stephen A. Martin, Director, Exempt Organizations Rulings and Agreements. DLN: 26053436003586</p>
+        </div>
+      </div>
+    </div>
 
-          <p>
-          Nos enfocamos en comunidades que muchas veces han quedado fuera de la vida cívica. No porque no les importe, sino porque los sistemas pueden ser confusos o difíciles de acceder.
-          </p>
-
-          <p>
-          Nuestro trabajo busca hacer la participación más sencilla y más humana. A veces eso significa registrarse para votar, aprender cómo funciona el gobierno local, participar en una limpieza comunitaria o simplemente conocer gente nueva.
-          </p>
-
-          <p>
-          Trabajamos junto a organizaciones locales para compartir recursos, fortalecer conexiones y construir un sureste de Texas donde todas las personas pertenezcan.
-          </p>
-
+    <div style="margin-top:80px">
+      <span class="section-label">Our Journey</span>
+      <h2 class="section-title">History & Milestones</h2>
+      <div style="margin-top:40px" class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">2024</div>
+          <h4>The Idea Takes Root</h4>
+          <p>Founders identified a gap in Southeast Texas: a lack of accessible, welcoming community infrastructure that could bridge diverse groups. SETX Beacon was conceived as a solution — a new light for a region that deserved better connection.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2025 — Early</div>
+          <h4>Official Formation</h4>
+          <p>SETX Beacon was formally incorporated. Leadership structure was put in place and the organization's core mission, values, and programs were defined. Operations were established at 1045 Church St, Beaumont, TX.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2025 — Mid</div>
+          <h4>First Community Events</h4>
+          <p>We hosted our inaugural community gatherings across Southeast Texas, reaching hundreds of residents and establishing our first local partnerships with community organizations.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2025 — Q4</div>
+          <h4>Brand & Digital Launch</h4>
+          <p>Developed our full brand identity and launched our digital presence. Expanded event programming and community outreach across the region.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">December 24, 2025</div>
+          <h4>IRS 501(c)(3) Approval</h4>
+          <p>The Internal Revenue Service formally recognized SETX Beacon as a tax-exempt public charity under IRC Section 501(c)(3). Contributions to SETX Beacon became fully tax-deductible as of this date.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">February 2026</div>
+          <h4>Determination Letter Received</h4>
+          <p>Official IRS Determination Letter (Letter 947) issued February 24, 2026. SETX Beacon is now fully recognized and operating as a federally tax-exempt public charity.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2026 — Now</div>
+          <h4>Growing the Beacon</h4>
+          <p>Continuing to expand partnerships, programs, and reach across Southeast Texas. Pursuing Google for Nonprofits and additional resources to scale community impact.</p>
         </div>
       </div>
     </div>
   </section>
+</div>
 
-  <section id="programs">
-    <div class="container">
-      <div class="section-header">
-        <h2 id="programs-title-en">What We Do</h2>
-        <h2 class="hidden" id="programs-title-es">Lo Que Hacemos</h2>
-      </div>
-      <div class="programs-grid">
-        <div class="program-card">
-          <div class="program-header">
-            <h3 id="prog1-title-en">Community Outreach</h3>
-            <h3 class="hidden" id="prog1-title-es">Alcance Comunitario</h3>
-          </div>
-          <div class="program-body">
-            <p id="prog1-desc-en">Community is built when people feel welcome. Our outreach work creates low-pressure spaces where neighbors can connect and show up for each other.</p>
-            <p class="hidden" id="prog1-desc-es">La comunidad se construye cuando las personas se sienten bienvenidas. Nuestro trabajo crea espacios accesibles donde las vecinas y vecinos pueden conectarse y apoyarse.</p>
-            <ul id="prog1-list-en">
-              <li>Board game nights, coffee socials, and dance parties to meet neighbors and build community</li>
-              <li>Local events like clothing swaps and community cleanups</li>
-              <li>Partnering with existing organizations to work alongside them and build up our community</li>
-            </ul>
-            <ul class="hidden" id="prog1-list-es">
-              <li>Noches de juegos de mesa, cafés sociales y fiestas de baile para conocer vecinos y construir comunidad</li>
-              <li>Eventos locales como intercambios de ropa y limpiezas comunitarias</li>
-              <li>Colaboración con organizaciones existentes para trabajar junto a ellas y fortalecer nuestra comunidad</li>
-            </ul>
-          </div>
+<!-- =================== PROGRAMS =================== -->
+<div id="page-programs" class="page">
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <span class="section-label" style="position:relative">What We Offer</span>
+    <h1 class="section-title" style="max-width:700px;margin:0 auto 16px;position:relative">Our Programs</h1>
+    <p class="section-sub" style="margin:0 auto;position:relative">Every program is designed with one goal: create the conditions for real human connection in Southeast Texas.</p>
+  </section>
+
+  <section class="section">
+    <div class="grid-2">
+      <div class="program-card">
+        <div class="program-header">
+          <div style="font-size:36px;margin-bottom:12px">🌐</div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:24px">Community Gatherings</h3>
         </div>
-        <div class="program-card">
-          <div class="program-header">
-            <h3 id="prog2-title-en">Civic Engagement</h3>
-            <h3 class="hidden" id="prog2-title-es">Participación Cívica</h3>
+        <div class="program-body">
+          <p>Regular neighborhood events, town halls, and community mixers designed to reduce social isolation and build organic relationships between Southeast Texas residents who may never otherwise meet.</p>
+          <div class="program-tags"><span class="pill">Monthly Events</span><span class="pill-orange pill">All Ages</span><span class="pill">Free Entry</span></div>
+        </div>
+      </div>
+      <div class="program-card">
+        <div class="program-header">
+          <div style="font-size:36px;margin-bottom:12px">🤝</div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:24px">Shared Service Projects</h3>
+        </div>
+        <div class="program-body">
+          <p>Volunteer and service opportunities that unite community members around shared causes — neighborhood cleanups, food drives, and collaborative projects that make Southeast Texas better for everyone.</p>
+          <div class="program-tags"><span class="pill">Volunteer-Led</span><span class="pill-orange pill">Community Impact</span></div>
+        </div>
+      </div>
+      <div class="program-card">
+        <div class="program-header">
+          <div style="font-size:36px;margin-bottom:12px">🗣️</div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:24px">Dialogue & Listening Circles</h3>
+        </div>
+        <div class="program-body">
+          <p>Facilitated conversations designed to bridge divides and foster meaningful dialogue across our communities. We believe listening is the foundation of connection.</p>
+          <div class="program-tags"><span class="pill">Facilitated</span><span class="pill-orange pill">Cross-Community</span></div>
+        </div>
+      </div>
+      <div class="program-card">
+        <div class="program-header">
+          <div style="font-size:36px;margin-bottom:12px">🏫</div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:24px">Partnership Initiatives</h3>
+        </div>
+        <div class="program-body">
+          <p>Collaborative programs with local schools, faith organizations, businesses, and nonprofits that amplify existing community work and build a stronger, more connected regional ecosystem.</p>
+          <div class="program-tags"><span class="pill">Multi-Org</span><span class="pill-orange pill">Long-Term</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:64px">
+      <div class="highlight-band">
+        <h2>All programs are free and open to all.</h2>
+        <p>We believe access to community should never depend on income, background, or circumstance. Every SETX Beacon program is low-barrier by design.</p>
+        <button class="btn btn-primary" onclick="showPage('contact')">Volunteer or Attend →</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- =================== IMPACT =================== -->
+<div id="page-impact" class="page">
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <span class="section-label" style="position:relative">Results</span>
+    <h1 class="section-title" style="max-width:700px;margin:0 auto 16px;position:relative">Our Impact</h1>
+    <p class="section-sub" style="margin:0 auto;position:relative">We measure success by the connections made, not just the events hosted.</p>
+  </section>
+
+  <section class="section">
+    <div class="grid-3">
+      <div class="impact-metric-card"><span class="impact-num">500+</span><p>Southeast Texas residents reached through events, programs, and outreach since our founding.</p></div>
+      <div class="impact-metric-card"><span class="impact-num">25+</span><p>Community events and gatherings hosted across the region, all free and open to the public.</p></div>
+      <div class="impact-metric-card"><span class="impact-num">10+</span><p>Local partnerships established with organizations, businesses, and community groups.</p></div>
+    </div>
+
+    <div style="margin-top:80px">
+      <span class="section-label">Campaign Highlights</span>
+      <h2 class="section-title">Key Campaigns & Achievements</h2>
+      <div class="grid-2" style="margin-top:40px">
+        <div class="card"><div class="card-icon">🏘️</div><h3>Neighborhood Connect</h3><p style="margin-top:12px">Our flagship monthly gathering program, bringing together residents from different neighborhoods for facilitated connection. This program has become the backbone of our community work.</p></div>
+        <div class="card"><div class="card-icon">🌱</div><h3>Southeast Texas Strong</h3><p style="margin-top:12px">A regional resilience initiative that united volunteers across Jefferson, Orange, and Hardin counties around shared service projects — cleanups, food drives, and neighbor-to-neighbor support.</p></div>
+        <div class="card"><div class="card-icon">🎙️</div><h3>Community Voices</h3><p style="margin-top:12px">A listening and dialogue series that created safe spaces for honest conversation across different community groups. Hosted in partnership with local faith and civic organizations.</p></div>
+        <div class="card"><div class="card-icon">🤝</div><h3>Partner Network Launch</h3><p style="margin-top:12px">Formalized partnerships with 10+ local organizations, creating a network of aligned nonprofits, businesses, and community groups working toward a more connected Southeast Texas.</p></div>
+      </div>
+    </div>
+
+    <div style="margin-top:64px">
+      <div class="quote-block">
+        <p>"We're not just counting attendees. We're tracking whether people exchange numbers, come back the next month, and start showing up for each other."</p>
+        <span>— SETX Beacon Leadership</span>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- =================== TRANSPARENCY =================== -->
+<div id="page-transparency" class="page">
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <span class="section-label" style="position:relative">Open Books</span>
+    <h1 class="section-title" style="max-width:700px;margin:0 auto 16px;position:relative">Transparency & Financials</h1>
+    <p class="section-sub" style="margin:0 auto;position:relative">We believe community trust is built through radical transparency. Here's exactly who we are, how we operate, and what our finances look like right now.</p>
+  </section>
+
+  <section class="section">
+
+    <!-- IRS Determination Confirmed -->
+    <div class="irs-box" style="margin-bottom:40px">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;flex-wrap:wrap">
+        <span style="font-size:28px">📋</span>
+        <h3 style="font-family:'Playfair Display',serif;font-size:22px">IRS 501(c)(3) Determination Confirmed</h3>
+        <span class="verified-badge">✓ Federally Recognized</span>
+      </div>
+      <p style="color:var(--muted);font-size:14px;line-height:1.75;max-width:760px">
+        The Internal Revenue Service formally recognized SETX Beacon as a tax-exempt public charity under IRC Section 501(c)(3), effective <strong style="color:var(--text)">December 24, 2025</strong>. The IRS Determination Letter (Letter 947) was issued <strong style="color:var(--text)">February 24, 2026</strong>, signed by Stephen A. Martin, Director, Exempt Organizations Rulings and Agreements. Donors may deduct contributions to SETX Beacon under IRC Section 170. SETX Beacon is also qualified to receive tax-deductible bequests, devises, transfers, or gifts under Sections 2055, 2106, and 2522.
+      </p>
+      <p style="color:var(--muted);font-size:13px;margin-top:12px">DLN: 26053436003586 &nbsp;·&nbsp; Accounting Period Ending: December 31 &nbsp;·&nbsp; Form 990/990-EZ/990-N: Required Annually</p>
+    </div>
+
+    <div class="grid-2">
+      <div>
+        <span class="section-label">Legal & Registration</span>
+        <h2 class="section-title" style="font-size:32px">Organization Details</h2>
+        <table class="info-table">
+          <tr><td>Organization Legal Name</td><td>SETX Beacon</td></tr>
+          <tr><td>EIN / Employer ID Number</td><td><strong style="color:var(--orange)">41-3255647</strong></td></tr>
+          <tr><td>Nonprofit / Charity Status</td><td><span class="verified-badge" style="font-size:11px">✓ 501(c)(3) Approved</span></td></tr>
+          <tr><td>Public Charity Classification</td><td>IRC Section 170(b)(1)(A)(vi)</td></tr>
+          <tr><td>Effective Date of Exemption</td><td>December 24, 2025</td></tr>
+          <tr><td>IRS Letter Date</td><td>February 24, 2026</td></tr>
+          <tr><td>Physical Address</td><td>1045 Church St<br>Beaumont, TX 77705</td></tr>
+          <tr><td>Email Address</td><td>info@setxbeacon.org</td></tr>
+          <tr><td>Official Website Domain</td><td>setxbeacon.org</td></tr>
+          <tr><td>State of Operation</td><td>Texas</td></tr>
+          <tr><td>Year Founded</td><td>2025</td></tr>
+          <tr><td>Accounting Period</td><td>January 1 – December 31</td></tr>
+        </table>
+      </div>
+
+      <div>
+        <span class="section-label">Financial Overview</span>
+        <h2 class="section-title" style="font-size:32px">Our Finances</h2>
+
+        <div class="alert-box" style="margin-bottom:28px">
+          <div class="alert-icon">ℹ️</div>
+          <p><strong>Early-Stage Organization:</strong> SETX Beacon is a brand-new nonprofit. We currently have a bank account established with no funds raised yet. We have no revenue, expenses, or liabilities to report at this time. As we begin accepting donations and grants, all financial activity will be reported here and in our annual Form 990 filing.</p>
+        </div>
+
+        <div class="card" style="margin-bottom:16px">
+          <h3>Current Financial Status</h3>
+          <table style="width:100%;margin-top:16px;border-collapse:collapse">
+            <tr style="border-bottom:1px solid var(--border)"><td style="padding:10px 0;color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:1px">Total Revenue to Date</td><td style="padding:10px 0;font-weight:600;text-align:right">$0</td></tr>
+            <tr style="border-bottom:1px solid var(--border)"><td style="padding:10px 0;color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:1px">Total Expenses to Date</td><td style="padding:10px 0;font-weight:600;text-align:right">$0</td></tr>
+            <tr style="border-bottom:1px solid var(--border)"><td style="padding:10px 0;color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:1px">Assets</td><td style="padding:10px 0;font-weight:600;text-align:right">Bank Account (unfunded)</td></tr>
+            <tr><td style="padding:10px 0;color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:1px">Liabilities</td><td style="padding:10px 0;font-weight:600;text-align:right">None</td></tr>
+          </table>
+        </div>
+
+        <div class="card">
+          <h3>Planned Budget Allocation</h3>
+          <p style="color:var(--muted);font-size:13px;line-height:1.65;margin:12px 0 20px">When funds are raised, here is how we intend to deploy them to maximize community impact:</p>
+          <div class="budget-bar"><div class="budget-label"><span>Community Events & Programming</span><span>60%</span></div><div class="bar-track"><div class="bar-fill" style="width:60%"></div></div></div>
+          <div class="budget-bar"><div class="budget-label"><span>Outreach & Communications</span><span>20%</span></div><div class="bar-track"><div class="bar-fill" style="width:20%"></div></div></div>
+          <div class="budget-bar"><div class="budget-label"><span>Operations & Administration</span><span>12%</span></div><div class="bar-track"><div class="bar-fill" style="width:12%"></div></div></div>
+          <div class="budget-bar"><div class="budget-label"><span>Technology & Infrastructure</span><span>8%</span></div><div class="bar-track"><div class="bar-fill" style="width:8%"></div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:64px">
+      <span class="section-label">Budget Narrative</span>
+      <h2 class="section-title" style="font-size:32px">How We Will Use Donations</h2>
+      <div class="grid-3" style="margin-top:40px">
+        <div class="card"><div class="card-icon">🎉</div><h3>Events & Programming (60%)</h3><p style="margin-top:12px">The majority of all funds go directly to community events: venue coordination, event supplies, food and refreshments, and facilitator costs. This is the core of what we do.</p></div>
+        <div class="card"><div class="card-icon">📣</div><h3>Outreach & Comms (20%)</h3><p style="margin-top:12px">Digital marketing, social media, print materials, and community outreach to ensure our programs reach the people who need them most across Southeast Texas.</p></div>
+        <div class="card"><div class="card-icon">⚙️</div><h3>Operations & Admin (12%)</h3><p style="margin-top:12px">Basic organizational costs: legal filings, accounting, insurance, and minimal administrative overhead. We keep this intentionally low as a commitment to our community.</p></div>
+      </div>
+    </div>
+
+    <div style="margin-top:48px">
+      <div class="card">
+        <h3>Our Commitment to Transparency</h3>
+        <p style="color:var(--muted);margin-top:16px;line-height:1.8;font-size:15px">SETX Beacon is committed to operating with full financial transparency from day one. As our organization grows and receives its first donations, we will publish annual reports, make our Form 990 filings publicly available, and maintain open books for all stakeholders and community members.</p>
+        <p style="color:var(--muted);margin-top:16px;line-height:1.8;font-size:15px">Questions about our finances or operations? Email us at <strong style="color:var(--orange)">info@setxbeacon.org</strong>. We respond to all financial inquiries.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- =================== CONTACT =================== -->
+<div id="page-contact" class="page">
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <span class="section-label" style="position:relative">Connect</span>
+    <h1 class="section-title" style="max-width:700px;margin:0 auto 16px;position:relative">Get Involved</h1>
+    <p class="section-sub" style="margin:0 auto;position:relative">Whether you want to volunteer, attend an event, partner with us, or support our work — we'd love to hear from you.</p>
+  </section>
+
+  <section class="section">
+    <div class="grid-2">
+      <div>
+        <span class="section-label">Reach Us</span>
+        <h2 class="section-title" style="font-size:32px">Contact Information</h2>
+        <table class="info-table" style="margin-top:28px">
+          <tr><td>Organization</td><td>SETX Beacon</td></tr>
+          <tr><td>EIN</td><td>41-3255647</td></tr>
+          <tr><td>Email</td><td>info@setxbeacon.org</td></tr>
+          <tr><td>Physical Address</td><td>1045 Church St<br>Beaumont, TX 77705</td></tr>
+          <tr><td>Region Served</td><td>Southeast Texas (Jefferson, Orange & Hardin Counties)</td></tr>
+          <tr><td>Response Time</td><td>Within 2–3 business days</td></tr>
+        </table>
+
+        <div class="grid-2" style="margin-top:32px;gap:12px">
+          <div class="card" style="padding:20px"><div style="font-size:24px;margin-bottom:8px">🙋</div><h3 style="font-size:16px">Volunteer</h3><p style="font-size:13px;margin-top:6px">Help run events, outreach, and programs.</p></div>
+          <div class="card" style="padding:20px"><div style="font-size:24px;margin-bottom:8px">🤝</div><h3 style="font-size:16px">Partner</h3><p style="font-size:13px;margin-top:6px">Collaborate if you're a local org or business.</p></div>
+          <div class="card" style="padding:20px"><div style="font-size:24px;margin-bottom:8px">💛</div><h3 style="font-size:16px">Donate</h3><p style="font-size:13px;margin-top:6px">Tax-deductible — EIN 41-3255647.</p></div>
+          <div class="card" style="padding:20px"><div style="font-size:24px;margin-bottom:8px">📅</div><h3 style="font-size:16px">Attend</h3><p style="font-size:13px;margin-top:6px">All events are free and open to everyone.</p></div>
+        </div>
+      </div>
+
+      <div>
+        <span class="section-label">Send a Message</span>
+        <h2 class="section-title" style="font-size:32px">We'd Love to Hear From You</h2>
+        <div class="contact-form" style="margin-top:28px">
+          <div class="form-group"><label>Your Name</label><input class="form-input" type="text" placeholder="First & Last Name"></div>
+          <div class="form-group"><label>Email Address</label><input class="form-input" type="email" placeholder="you@email.com"></div>
+          <div class="form-group">
+            <label>How Can We Help?</label>
+            <select class="form-input" style="cursor:pointer">
+              <option value="">Select a topic...</option>
+              <option>I want to volunteer</option>
+              <option>I want to attend an event</option>
+              <option>I want to partner with SETX Beacon</option>
+              <option>I'd like to make a donation</option>
+              <option>General question</option>
+            </select>
           </div>
-          <div class="program-body">
-            <p id="prog2-desc-en">We help people understand how local decisions are made, and how they can take part without needing a political background.</p>
-            <p class="hidden" id="prog2-desc-es">Ayudamos a nuestras vecinas y vecinos a participar con confianza en las decisiones que dan forma a nuestras vidas y navegar el gobierno local.</p>
-            <ul id="prog2-list-en">
-              <li>Nonpartisan voter registration and helping people understand why their vote matters</li>
-              <li>Clear, nonpartisan election information and reminders</li>
-              <li>Helping neighbors navigate city and county services</li>
-              <li>Civic education programs on how to apply for benefits and access resources</li>
-            </ul>
-            <ul class="hidden" id="prog2-list-es">
-              <li>Registro de votantes sin afiliación partidista y ayudar a las personas a entender por qué su voto importa</li>
-              <li>Recordatorios e información electoral, y mantener a nuestra comunidad informada</li>
-              <li>Ayudar a las personas a navegar el gobierno local y trabajar con servicios de la ciudad y el condado</li>
-              <li>Programas de educación cívica sobre cómo solicitar beneficios y acceder a recursos</li>
-            </ul>
-          </div>
+          <div class="form-group"><label>Message</label><textarea class="form-input" placeholder="Tell us a bit about yourself and how you'd like to be involved..."></textarea></div>
+          <button class="btn btn-primary" style="align-self:flex-start" onclick="alert('Thank you! We\'ll be in touch within 2–3 business days at info@setxbeacon.org')">Send Message →</button>
         </div>
       </div>
     </div>
   </section>
+</div>
 
-  <section id="contact">
-    <div class="container">
-      <div class="contact-content">
-        <h2 id="contact-title-en">Get In Touch</h2>
-        <h2 class="hidden" id="contact-title-es">Contáctanos</h2>
-        <p id="contact-desc-en">Want to get involved, partner with us, or just learn more? Reach out anytime and we will be sure to follow up</p>
-        <p class="hidden" id="contact-desc-es">¿Quieres participar, colaborar o saber más? Escríbenos cuando quieras.</p>
-        <a href="mailto:info@setxbeacon.org" class="contact-email">info@setxbeacon.org</a>
-        <div class="accessibility-note">
-          <p id="access-en">BEACON is committed to making all of our events and materials accessible and welcoming to everyone.</p>
-          <p class="hidden" id="access-es">BEACON está comprometido a hacer que todos nuestros eventos y materiales sean accesibles y acogedores para todas las personas.</p>
-        </div>
-        <div class="accessibility-note" style="margin-top: 1rem;">
-          <p id="tax-en"><em>SETX BEACON is a nonprofit organization currently applying for 501(c)(3) status and operates as a nonpartisan community organization.</em></p>
-          <p class="hidden" id="tax-es"><em>Nota: SETX BEACON está actualmente solicitando el estatus 501(c)(3). Las donaciones aún no son deducibles de impuestos, ¡pero estamos trabajando en ello!</em></p>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- ======= FOOTER ======= -->
+<footer>
+  <div class="footer-brand">
+    <img src="https://i.imgur.com/543HTXC.png" alt="SETX Beacon" style="height:48px;width:auto;margin-bottom:8px">
+    <p>Bringing neighbors together and building meaningful connections across Southeast Texas. We create welcoming spaces where people can gather, belong, and thrive.</p>
+    <p style="margin-top:12px;font-size:13px">Beaumont, TX 77705</p>
+    <p style="font-size:13px;margin-top:4px">✉️ info@setxbeacon.org &nbsp;·&nbsp; setxbeacon.org</p>
+    <p style="font-size:13px;margin-top:4px;color:var(--orange)">EIN: 41-3255647 &nbsp;·&nbsp; IRS-Recognized 501(c)(3)</p>
+  </div>
+  <div class="footer-col">
+    <h4>Organization</h4>
+    <a onclick="showPage('about')">About Us</a>
+    <a onclick="showPage('programs')">Programs</a>
+    <a onclick="showPage('impact')">Impact</a>
+    <a onclick="showPage('transparency')">Transparency</a>
+  </div>
+  <div class="footer-col">
+    <h4>Get Involved</h4>
+    <a onclick="showPage('contact')">Contact Us</a>
+    <a onclick="showPage('contact')">Volunteer</a>
+    <a onclick="showPage('contact')">Partner With Us</a>
+    <a onclick="showPage('contact')">Donate</a>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <span>© 2026 SETX Beacon · IRS 501(c)(3) Public Charity · EIN: 41-3255647</span>
+  <span>Beaumont, TX 77705 · info@setxbeacon.org</span>
+</div>
 
-  <footer>
-    <div class="container">
-      <div class="footer-divider"></div>
-      <p>&copy; <span id="year"></span> SETX BEACON</p>
-      <p>Building Engagement And Connecting Our Neighbors</p>
-      <p style="margin-top: 1rem;">A sister organization to SETXII</p>
-      <div class="footer-links">
-        <a href="#mission">Mission</a>
-        <a href="#programs">Programs</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    
-    function switchLang(lang) {
-      const buttons = document.querySelectorAll('.lang-btn');
-      buttons.forEach(btn => {
-        if (btn.textContent === lang.toUpperCase()) {
-          btn.classList.add('active');
-        } else {
-          btn.classList.remove('active');
-        }
-      });
-      
-      const elements = {
-        'en': ['banner-en', 'tagline-en', 'subtitle-en', 'cta1-en', 'cta2-en', 'mission-title-en', 'mission-en', 'programs-title-en', 'prog1-title-en', 'prog1-desc-en', 'prog1-list-en', 'prog2-title-en', 'prog2-desc-en', 'prog2-list-en', 'contact-title-en', 'contact-desc-en', 'access-en', 'tax-en'],
-        'es': ['banner-es', 'tagline-es', 'subtitle-es', 'cta1-es', 'cta2-es', 'mission-title-es', 'mission-es', 'programs-title-es', 'prog1-title-es', 'prog1-desc-es', 'prog1-list-es', 'prog2-title-es', 'prog2-desc-es', 'prog2-list-es', 'contact-title-es', 'contact-desc-es', 'access-es', 'tax-es']
-      };
-      
-      if (lang === 'en') {
-        elements.en.forEach(id => document.getElementById(id).classList.remove('hidden'));
-        elements.es.forEach(id => document.getElementById(id).classList.add('hidden'));
-      } else {
-        elements.es.forEach(id => document.getElementById(id).classList.remove('hidden'));
-        elements.en.forEach(id => document.getElementById(id).classList.add('hidden'));
-      }
-    }
-    
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
-  </script>
+<script>
+function showPage(name) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+  document.getElementById('page-' + name).classList.add('active');
+  const btn = document.getElementById('nav-' + name);
+  if (btn) btn.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  initReveal();
+}
+function initReveal() {
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => { el.classList.remove('visible'); obs.observe(el); });
+}
+initReveal();
+</script>
 </body>
 </html>
