@@ -389,13 +389,13 @@ footer {
   <section class="hero">
     <div class="hero-bg"></div>
     <div class="hero-logo">
-      <span style="font-family:'Playfair Display',serif;font-size:48px;font-weight:900;background:linear-gradient(120deg,#ff8a00,#b91c6b,#7e22ce);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 40px rgba(123,45,139,0.4));position:relative;">SETX BEACON</span>
+      <span style="font-family:'Playfair Display',serif;font-size:48px;font-weight:900;color:#ffffff;text-shadow:0 0 40px rgba(0,0,0,0.4),0 2px 20px rgba(0,0,0,0.3);position:relative;letter-spacing:2px;">SETX BEACON</span>
     </div>
     <div class="hero-eyebrow">✦ IRS-Recognized 501(c)(3) · Southeast Texas</div>
     <h1>A new <span class="hero-light">light</span> for<br>Southeast Texas</h1>
     <p class="hero-tagline">Be the light. Build the change.</p>
     <p class="hero-sub">SETX BEACON brings neighbors together through local events, shared service, and genuine community connection and creating spaces where everyone belongs.</p>
-    <div class="hero-btns">
+    <div class="hero-btns" style="position:relative;z-index:10;">
       <button class="btn btn-primary" onclick="showPage('contact')">Get Involved →</button>
       <button class="btn btn-ghost" onclick="showPage('about')">Our Story</button>
     </div>
@@ -442,54 +442,45 @@ footer {
 <!-- =================== ABOUT =================== -->
 <div id="page-about" class="page">
 
-  <!-- HERO -->
-  <section class="page-hero">
+  <!-- HERO: acronym breakdown on the animated gradient -->
+  <section class="page-hero" style="min-height:60vh;padding:100px 24px 80px;">
     <div class="page-hero-bg"></div>
-    <span class="section-label">Our Story</span>
-    <h1 class="section-title">About SETX BEACON</h1>
-    <p class="section-sub">Building Engagement And Connecting Our Neighbors across Southeast Texas.</p>
+    <span class="section-label">What BEACON Stands For</span>
+    <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:0;max-width:780px;width:100%;border:1px solid rgba(255,255,255,0.15);border-radius:16px;overflow:hidden;background:rgba(0,0,0,0.25);backdrop-filter:blur(12px);margin-top:32px;">
+      <div style="padding:24px 12px;border-right:1px solid rgba(255,255,255,0.1);text-align:center;">
+        <div style="font-family:'Playfair Display',serif;font-size:36px;font-weight:900;background:linear-gradient(180deg,#ff8a00,#ff5e1a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;">B</div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:1px;color:rgba(255,255,255,0.7);margin-top:8px;text-transform:uppercase;">Building</div>
+      </div>
+      <div style="padding:24px 12px;border-right:1px solid rgba(255,255,255,0.1);text-align:center;">
+        <div style="font-family:'Playfair Display',serif;font-size:36px;font-weight:900;background:linear-gradient(180deg,#ff5e1a,#d9265e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;">E</div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:1px;color:rgba(255,255,255,0.7);margin-top:8px;text-transform:uppercase;">Engagement</div>
+      </div>
+      <div style="padding:24px 12px;border-right:1px solid rgba(255,255,255,0.1);text-align:center;">
+        <div style="font-family:'Playfair Display',serif;font-size:36px;font-weight:900;background:linear-gradient(180deg,#d9265e,#b91c6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;">A</div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:1px;color:rgba(255,255,255,0.7);margin-top:8px;text-transform:uppercase;">And</div>
+      </div>
+      <div style="padding:24px 12px;border-right:1px solid rgba(255,255,255,0.1);text-align:center;">
+        <div style="font-family:'Playfair Display',serif;font-size:36px;font-weight:900;background:linear-gradient(180deg,#b91c6b,#8b1a8b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;">C</div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:1px;color:rgba(255,255,255,0.7);margin-top:8px;text-transform:uppercase;">Connecting</div>
+      </div>
+      <div style="padding:24px 12px;border-right:1px solid rgba(255,255,255,0.1);text-align:center;">
+        <div style="font-family:'Playfair Display',serif;font-size:36px;font-weight:900;background:linear-gradient(180deg,#8b1a8b,#7e22ce);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;">O</div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:1px;color:rgba(255,255,255,0.7);margin-top:8px;text-transform:uppercase;">Our</div>
+      </div>
+      <div style="padding:24px 12px;text-align:center;">
+        <div style="font-family:'Playfair Display',serif;font-size:36px;font-weight:900;background:linear-gradient(180deg,#7e22ce,#5b0a6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;">N</div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:1px;color:rgba(255,255,255,0.7);margin-top:8px;text-transform:uppercase;">Neighbors</div>
+      </div>
+    </div>
   </section>
 
-  <!-- WHO WE ARE: full-width centered statement with warm gradient accent -->
+  <!-- WHO WE ARE -->
   <section style="padding:90px 24px 80px;">
     <div style="max-width:800px;margin:0 auto;text-align:center;">
       <span class="section-label">Who We Are</span>
       <h2 style="font-family:'Playfair Display',serif;font-size:clamp(30px,4vw,46px);line-height:1.15;letter-spacing:-0.5px;margin:12px 0 32px;">We close the gap between wanting to help and knowing how.</h2>
       <p style="color:var(--muted);line-height:1.95;font-size:17px;margin-bottom:20px;">BEACON is a Southeast Texas nonprofit focused on civic participation and community connection. We started with a simple observation: people want to be involved, but many do not feel invited, informed, or connected enough to take that first step.</p>
       <p style="color:var(--muted);line-height:1.95;font-size:17px;">Our role is to close that gap. We create spaces where people can show up, learn, meet others, and start getting involved in ways that feel natural and accessible.</p>
-    </div>
-  </section>
-
-  <!-- ACRONYM BREAKDOWN: colorful band -->
-  <section style="background:linear-gradient(135deg,rgba(120,9,130,0.2),rgba(255,138,0,0.12));border-top:1px solid rgba(120,9,130,0.25);border-bottom:1px solid rgba(120,9,130,0.25);padding:70px 24px;">
-    <div style="max-width:900px;margin:0 auto;text-align:center;">
-      <span class="section-label">What BEACON Stands For</span>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:0;margin-top:40px;">
-        <div style="padding:28px 16px;border-right:1px solid rgba(255,255,255,0.08);">
-          <div style="font-family:'Playfair Display',serif;font-size:42px;font-weight:900;background:linear-gradient(135deg,#ff8a00,#b91c6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;">B</div>
-          <div style="font-size:12px;font-weight:600;letter-spacing:1px;color:var(--orange);margin:8px 0 4px;text-transform:uppercase;">Building</div>
-        </div>
-        <div style="padding:28px 16px;border-right:1px solid rgba(255,255,255,0.08);">
-          <div style="font-family:'Playfair Display',serif;font-size:42px;font-weight:900;background:linear-gradient(135deg,#ff5e1a,#7e22ce);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;">E</div>
-          <div style="font-size:12px;font-weight:600;letter-spacing:1px;color:var(--orange);margin:8px 0 4px;text-transform:uppercase;">Engagement</div>
-        </div>
-        <div style="padding:28px 16px;border-right:1px solid rgba(255,255,255,0.08);">
-          <div style="font-family:'Playfair Display',serif;font-size:42px;font-weight:900;background:linear-gradient(135deg,#b91c6b,#ff8a00);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;">A</div>
-          <div style="font-size:12px;font-weight:600;letter-spacing:1px;color:var(--orange);margin:8px 0 4px;text-transform:uppercase;">And</div>
-        </div>
-        <div style="padding:28px 16px;border-right:1px solid rgba(255,255,255,0.08);">
-          <div style="font-family:'Playfair Display',serif;font-size:42px;font-weight:900;background:linear-gradient(135deg,#7e22ce,#ff5e1a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;">C</div>
-          <div style="font-size:12px;font-weight:600;letter-spacing:1px;color:var(--orange);margin:8px 0 4px;text-transform:uppercase;">Connecting</div>
-        </div>
-        <div style="padding:28px 16px;border-right:1px solid rgba(255,255,255,0.08);">
-          <div style="font-family:'Playfair Display',serif;font-size:42px;font-weight:900;background:linear-gradient(135deg,#ff8a00,#b91c6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;">O</div>
-          <div style="font-size:12px;font-weight:600;letter-spacing:1px;color:var(--orange);margin:8px 0 4px;text-transform:uppercase;">Our</div>
-        </div>
-        <div style="padding:28px 16px;">
-          <div style="font-family:'Playfair Display',serif;font-size:42px;font-weight:900;background:linear-gradient(135deg,#b91c6b,#7e22ce);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;">N</div>
-          <div style="font-size:12px;font-weight:600;letter-spacing:1px;color:var(--orange);margin:8px 0 4px;text-transform:uppercase;">Neighbors</div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -676,8 +667,8 @@ footer {
 
     <div style="margin-top:64px;">
       <div class="highlight-band">
-        <h2>All programs are free and open to all.</h2>
-        <p>We believe access to community should never depend on income, background, or circumstance. Show up. You belong here.</p>
+        <h2>Our programs are free. Always.</h2>
+        <p>We believe access to community should never depend on income, background, or circumstance. BEACON is built for the working people of Southeast Texas who want to connect, get informed, and make a difference in the place they call home.</p>
         <button class="btn btn-primary" onclick="showPage('contact')">Volunteer or Attend →</button>
       </div>
     </div>
@@ -705,7 +696,7 @@ footer {
         <table class="info-table" style="margin-top:28px;">
           <tr><td>Organization</td><td>SETX BEACON</td></tr>
           <tr><td>EIN</td><td><strong style="color:var(--orange)">41-3255647</strong></td></tr>
-          <tr><td>Email</td><td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="056c6b636a457660717d676064666a6b2b6a7762">[email&#160;protected]</a></td></tr>
+          <tr><td>Email</td><td>info@setxbeacon.org</td></tr>
           <tr><td>Address</td><td>1045 Church St<br>Beaumont, TX 77705</td></tr>
           <tr><td>Region Served</td><td>Jefferson, Orange & Hardin Counties</td></tr>
           <tr><td>Response Time</td><td>Within 2–3 business days</td></tr>
@@ -713,24 +704,24 @@ footer {
 
         <div class="contact-info-cards">
           <div class="contact-mini-card">
-            <div class="icon">🙋</div>
+            <div style="width:32px;height:3px;background:linear-gradient(90deg,var(--purple),var(--orange));border-radius:999px;margin-bottom:14px;"></div>
             <h3>Volunteer</h3>
             <p>Help run events, support outreach, or lend a hand where needed.</p>
           </div>
           <div class="contact-mini-card">
-            <div class="icon">🤝</div>
+            <div style="width:32px;height:3px;background:linear-gradient(90deg,#b91c6b,#ff8a00);border-radius:999px;margin-bottom:14px;"></div>
             <h3>Partner</h3>
             <p>If you're part of a group or org, we'd love to work together.</p>
           </div>
           <div class="contact-mini-card">
-            <div class="icon">💛</div>
+            <div style="width:32px;height:3px;background:linear-gradient(90deg,#ff5e1a,#b91c6b);border-radius:999px;margin-bottom:14px;"></div>
             <h3>Donate</h3>
             <p>Help keep events free and accessible. Tax-deductible under EIN 41-3255647.</p>
           </div>
           <div class="contact-mini-card">
-            <div class="icon">📅</div>
+            <div style="width:32px;height:3px;background:linear-gradient(90deg,#7e22ce,#ff5e1a);border-radius:999px;margin-bottom:14px;"></div>
             <h3>Attend</h3>
-            <p>The easiest way to start. Just show up , you're always welcome.</p>
+            <p>The easiest way to start. Just show up, you're always welcome.</p>
           </div>
         </div>
       </div>
@@ -776,7 +767,7 @@ footer {
     <span style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:white;display:block;margin-bottom:12px;">SETX BEACON</span>
     <p style="margin-bottom:12px;">Bringing neighbors together and building meaningful connections across Southeast Texas. We create welcoming spaces where people can gather, belong, and thrive.</p>
     <p style="font-size:13px;">Beaumont, TX 77705</p>
-    <p style="font-size:13px;margin-top:4px;">✉️ <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9df4f3fbf2ddeef8e9e5fff8fcfef2f3b3f2effa">[email&#160;protected]</a> · setxbeacon.org</p>
+    <p style="font-size:13px;margin-top:4px;">✉️ info@setxbeacon.org · setxbeacon.org</p>
     <p style="font-size:13px;margin-top:4px;color:rgba(255,255,255,0.6)">EIN: 41-3255647 · IRS-Recognized 501(c)(3)</p>
   </div>
   <div class="footer-col">
@@ -794,7 +785,7 @@ footer {
 </footer>
 <div class="footer-bottom" style="background:#b91c6b;padding:18px 48px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:13px;color:rgba(255,255,255,0.8);">
   <span>© 2026 SETX BEACON · IRS 501(c)(3) Public Charity · EIN: 41-3255647</span>
-  <span>Beaumont, TX 77705 · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c1a8afa7ae81b2a4b5b9a3a4a0a2aeafefaeb3a6">[email&#160;protected]</a></span>
+  <span>Beaumont, TX 77705 · info@setxbeacon.org</span>
 </div>
 
 <script>
