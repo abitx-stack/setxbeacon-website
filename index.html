@@ -109,9 +109,8 @@ nav button:hover, nav button.active { color: var(--text); background: rgba(123,4
   margin-bottom: 20px;
 }
 .hero-light {
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 1.5px rgba(255,255,255,0.9);
-  filter: drop-shadow(0 0 12px rgba(255,200,100,0.9)) drop-shadow(0 0 28px rgba(255,138,0,0.6));
+  color: #ffe580;
+  text-shadow: 0 0 16px rgba(255,220,80,0.9), 0 0 40px rgba(255,160,0,0.7), 0 0 80px rgba(255,100,0,0.4);
   position: relative;
 }
 .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; position: relative; }
@@ -353,6 +352,38 @@ footer {
 .alert-box p { font-size: 14px; color: var(--muted); line-height: 1.65; }
 .alert-box strong { color: var(--text); }
 
+/* ========= BEACON ACRONYM ========= */
+.beacon-acronym {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0;
+  max-width: 860px;
+  width: 100%;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(12px);
+}
+.beacon-letter-cell {
+  padding: 32px 12px;
+  text-align: center;
+}
+.beacon-letter {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(40px, 6vw, 64px);
+  font-weight: 900;
+  line-height: 1;
+}
+.beacon-word {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,0.75);
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+
 @media (max-width: 768px) {
   header { padding: 12px 20px; }
   nav button { padding: 6px 8px; font-size: 12px; }
@@ -361,6 +392,13 @@ footer {
   .highlight-band { padding: 48px 28px; margin: 0 12px; }
   .contact-info-cards { grid-template-columns: 1fr; }
   .page-hero { min-height: auto; padding: 80px 24px 60px; }
+  /* Acronym: 3x2 grid on mobile */
+  .beacon-acronym { grid-template-columns: repeat(3, 1fr); }
+  .beacon-letter-cell { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .beacon-letter-cell:nth-child(1), .beacon-letter-cell:nth-child(2), .beacon-letter-cell:nth-child(4), .beacon-letter-cell:nth-child(5) { border-right: 1px solid rgba(255,255,255,0.1) !important; }
+  .beacon-letter-cell:nth-child(5), .beacon-letter-cell:nth-child(6) { border-bottom: none; }
+  /* Who We Are home cards: stack on mobile */
+  .who-we-are-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
 }
 @keyframes gradientMove {
   0% { background-position: 0% 50%; }
@@ -389,7 +427,7 @@ footer {
   <section class="hero">
     <div class="hero-bg"></div>
     <div class="hero-logo">
-      <span style="font-family:'Playfair Display',serif;font-size:48px;font-weight:900;color:#ffffff;text-shadow:0 0 40px rgba(0,0,0,0.4),0 2px 20px rgba(0,0,0,0.3);position:relative;letter-spacing:2px;">SETX BEACON</span>
+      <span style="font-family:'Playfair Display',serif;font-size:clamp(48px,10vw,96px);font-weight:900;color:#ffffff;text-shadow:0 0 40px rgba(0,0,0,0.4),0 2px 20px rgba(0,0,0,0.3);position:relative;letter-spacing:3px;line-height:1;">SETX BEACON</span>
     </div>
     <div class="hero-eyebrow">✦ IRS-Recognized 501(c)(3) · Southeast Texas</div>
     <h1>A new <span class="hero-light">light</span> for<br>Southeast Texas</h1>
@@ -405,7 +443,7 @@ footer {
 
   <section class="section reveal">
     <span class="section-label">Who We Are</span>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+    <div class="who-we-are-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
       <div>
         <h2 class="section-title">A new kind of civic organization.</h2>
         <p style="color:var(--muted);line-height:1.8;font-size:16px;margin-bottom:20px">SETX BEACON is an IRS-recognized 501(c)(3) nonprofit rooted in Southeast Texas. We are not a government agency, a political group, or a social services provider. We are a community organization focused entirely on bringing people together and making it easier for residents to show up, connect, and take part in the life of their region.</p>
@@ -446,30 +484,30 @@ footer {
   <section class="page-hero" style="min-height:60vh;padding:100px 24px 80px;">
     <div class="page-hero-bg"></div>
     <span class="section-label">What BEACON Stands For</span>
-    <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:0;max-width:780px;width:100%;border:1px solid rgba(255,255,255,0.15);border-radius:16px;overflow:hidden;background:rgba(0,0,0,0.25);backdrop-filter:blur(12px);margin-top:32px;">
-      <div style="padding:24px 12px;border-right:1px solid rgba(255,255,255,0.1);text-align:center;">
-        <div style="font-family:'Playfair Display',serif;font-size:36px;font-weight:900;background:linear-gradient(180deg,#ff8a00,#ff5e1a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;">B</div>
-        <div style="font-size:11px;font-weight:600;letter-spacing:1px;color:rgba(255,255,255,0.7);margin-top:8px;text-transform:uppercase;">Building</div>
+    <div class="beacon-acronym" style="margin-top:36px;">
+      <div class="beacon-letter-cell" style="border-right:1px solid rgba(255,255,255,0.1);">
+        <div class="beacon-letter" style="background:linear-gradient(180deg,#ff8a00,#ff5e1a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">B</div>
+        <div class="beacon-word">Building</div>
       </div>
-      <div style="padding:24px 12px;border-right:1px solid rgba(255,255,255,0.1);text-align:center;">
-        <div style="font-family:'Playfair Display',serif;font-size:36px;font-weight:900;background:linear-gradient(180deg,#ff5e1a,#d9265e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;">E</div>
-        <div style="font-size:11px;font-weight:600;letter-spacing:1px;color:rgba(255,255,255,0.7);margin-top:8px;text-transform:uppercase;">Engagement</div>
+      <div class="beacon-letter-cell" style="border-right:1px solid rgba(255,255,255,0.1);">
+        <div class="beacon-letter" style="background:linear-gradient(180deg,#ff5e1a,#d9265e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">E</div>
+        <div class="beacon-word">Engagement</div>
       </div>
-      <div style="padding:24px 12px;border-right:1px solid rgba(255,255,255,0.1);text-align:center;">
-        <div style="font-family:'Playfair Display',serif;font-size:36px;font-weight:900;background:linear-gradient(180deg,#d9265e,#b91c6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;">A</div>
-        <div style="font-size:11px;font-weight:600;letter-spacing:1px;color:rgba(255,255,255,0.7);margin-top:8px;text-transform:uppercase;">And</div>
+      <div class="beacon-letter-cell" style="border-right:1px solid rgba(255,255,255,0.1);">
+        <div class="beacon-letter" style="background:linear-gradient(180deg,#d9265e,#b91c6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">A</div>
+        <div class="beacon-word">And</div>
       </div>
-      <div style="padding:24px 12px;border-right:1px solid rgba(255,255,255,0.1);text-align:center;">
-        <div style="font-family:'Playfair Display',serif;font-size:36px;font-weight:900;background:linear-gradient(180deg,#b91c6b,#8b1a8b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;">C</div>
-        <div style="font-size:11px;font-weight:600;letter-spacing:1px;color:rgba(255,255,255,0.7);margin-top:8px;text-transform:uppercase;">Connecting</div>
+      <div class="beacon-letter-cell" style="border-right:1px solid rgba(255,255,255,0.1);">
+        <div class="beacon-letter" style="background:linear-gradient(180deg,#b91c6b,#8b1a8b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">C</div>
+        <div class="beacon-word">Connecting</div>
       </div>
-      <div style="padding:24px 12px;border-right:1px solid rgba(255,255,255,0.1);text-align:center;">
-        <div style="font-family:'Playfair Display',serif;font-size:36px;font-weight:900;background:linear-gradient(180deg,#8b1a8b,#7e22ce);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;">O</div>
-        <div style="font-size:11px;font-weight:600;letter-spacing:1px;color:rgba(255,255,255,0.7);margin-top:8px;text-transform:uppercase;">Our</div>
+      <div class="beacon-letter-cell" style="border-right:1px solid rgba(255,255,255,0.1);">
+        <div class="beacon-letter" style="background:linear-gradient(180deg,#8b1a8b,#7e22ce);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">O</div>
+        <div class="beacon-word">Our</div>
       </div>
-      <div style="padding:24px 12px;text-align:center;">
-        <div style="font-family:'Playfair Display',serif;font-size:36px;font-weight:900;background:linear-gradient(180deg,#7e22ce,#5b0a6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;">N</div>
-        <div style="font-size:11px;font-weight:600;letter-spacing:1px;color:rgba(255,255,255,0.7);margin-top:8px;text-transform:uppercase;">Neighbors</div>
+      <div class="beacon-letter-cell">
+        <div class="beacon-letter" style="background:linear-gradient(180deg,#7e22ce,#5b0a6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">N</div>
+        <div class="beacon-word">Neighbors</div>
       </div>
     </div>
   </section>
@@ -486,7 +524,7 @@ footer {
 
   <!-- VALUES + TIMELINE: two column -->
   <section style="max-width:1160px;margin:0 auto;padding:90px 24px;">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;">
+    <div class="who-we-are-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;">
 
       <!-- LEFT: Values -->
       <div>
@@ -696,7 +734,7 @@ footer {
         <table class="info-table" style="margin-top:28px;">
           <tr><td>Organization</td><td>SETX BEACON</td></tr>
           <tr><td>EIN</td><td><strong style="color:var(--orange)">41-3255647</strong></td></tr>
-          <tr><td>Email</td><td>info@setxbeacon.org</td></tr>
+          <tr><td>Email</td><td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f59c9b939ab58690818d979094969a9bdb9a8792">[email&#160;protected]</a></td></tr>
           <tr><td>Address</td><td>1045 Church St<br>Beaumont, TX 77705</td></tr>
           <tr><td>Region Served</td><td>Jefferson, Orange & Hardin Counties</td></tr>
           <tr><td>Response Time</td><td>Within 2–3 business days</td></tr>
@@ -730,18 +768,18 @@ footer {
       <div class="form-card">
         <span class="section-label">Send a Message</span>
         <h2 style="font-family:'Playfair Display',serif;font-size:32px;margin-bottom:28px;">We'd Love to Hear From You</h2>
-        <div class="contact-form">
+        <div class="contact-form" id="contact-form">
           <div class="form-group">
             <label>Your Name</label>
-            <input class="form-input" type="text" placeholder="First & Last Name">
+            <input class="form-input" type="text" name="name" placeholder="First & Last Name" required>
           </div>
           <div class="form-group">
             <label>Email Address</label>
-            <input class="form-input" type="email" placeholder="you@email.com">
+            <input class="form-input" type="email" name="email" placeholder="you@email.com" required>
           </div>
           <div class="form-group">
             <label>How Can We Help?</label>
-            <select class="form-input" style="cursor:pointer">
+            <select class="form-input" name="topic" style="cursor:pointer">
               <option value="">Select a topic...</option>
               <option>I want to volunteer</option>
               <option>I want to attend an event</option>
@@ -752,9 +790,11 @@ footer {
           </div>
           <div class="form-group">
             <label>Message</label>
-            <textarea class="form-input" placeholder="Tell us a bit about yourself and how you'd like to be involved..."></textarea>
+            <textarea class="form-input" name="message" placeholder="Tell us a bit about yourself and how you'd like to be involved..."></textarea>
           </div>
-          <button class="btn btn-primary" style="align-self:flex-start" onclick="alert('Thank you! We\'ll be in touch within 2–3 business days at info@setxbeacon.org')">Send Message →</button>
+          <button class="btn btn-primary" id="submit-btn" style="align-self:flex-start" type="button" onclick="submitForm()">Send Message →</button>
+          <p id="form-success" style="display:none;color:#4ade80;font-size:14px;margin-top:8px;">Thank you! We'll be in touch within 2-3 business days.</p>
+          <p id="form-error" style="display:none;color:#f87171;font-size:14px;margin-top:8px;">Something went wrong. Please email us directly at info@setxbeacon.org</p>
         </div>
       </div>
     </div>
@@ -767,7 +807,7 @@ footer {
     <span style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:white;display:block;margin-bottom:12px;">SETX BEACON</span>
     <p style="margin-bottom:12px;">Bringing neighbors together and building meaningful connections across Southeast Texas. We create welcoming spaces where people can gather, belong, and thrive.</p>
     <p style="font-size:13px;">Beaumont, TX 77705</p>
-    <p style="font-size:13px;margin-top:4px;">✉️ info@setxbeacon.org · setxbeacon.org</p>
+    <p style="font-size:13px;margin-top:4px;">✉️ <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="93fafdf5fcd3e0f6e7ebf1f6f2f0fcfdbdfce1f4">[email&#160;protected]</a> · setxbeacon.org</p>
     <p style="font-size:13px;margin-top:4px;color:rgba(255,255,255,0.6)">EIN: 41-3255647 · IRS-Recognized 501(c)(3)</p>
   </div>
   <div class="footer-col">
@@ -785,7 +825,7 @@ footer {
 </footer>
 <div class="footer-bottom" style="background:#b91c6b;padding:18px 48px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:13px;color:rgba(255,255,255,0.8);">
   <span>© 2026 SETX BEACON · IRS 501(c)(3) Public Charity · EIN: 41-3255647</span>
-  <span>Beaumont, TX 77705 · info@setxbeacon.org</span>
+  <span>Beaumont, TX 77705 · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="741d1a121b340711000c161115171b1a5a1b0613">[email&#160;protected]</a></span>
 </div>
 
 <script>
@@ -803,6 +843,42 @@ function initReveal() {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => { el.classList.remove('visible'); obs.observe(el); });
+}
+async function submitForm() {
+  const btn = document.getElementById('submit-btn');
+  const success = document.getElementById('form-success');
+  const error = document.getElementById('form-error');
+  const form = document.getElementById('contact-form');
+  const name = form.querySelector('[name="name"]').value.trim();
+  const email = form.querySelector('[name="email"]').value.trim();
+  if (!name || !email) { alert('Please enter your name and email.'); return; }
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  const data = {
+    name, email,
+    topic: form.querySelector('[name="topic"]').value,
+    message: form.querySelector('[name="message"]').value
+  };
+  try {
+    const res = await fetch('https://formspree.io/f/xkopozbr', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    if (res.ok) {
+      success.style.display = 'block';
+      error.style.display = 'none';
+      form.querySelectorAll('input, textarea, select').forEach(el => el.value = '');
+      btn.textContent = 'Sent!';
+    } else {
+      throw new Error('Failed');
+    }
+  } catch(e) {
+    error.style.display = 'block';
+    success.style.display = 'none';
+    btn.textContent = 'Send Message →';
+    btn.disabled = false;
+  }
 }
 initReveal();
 </script>
